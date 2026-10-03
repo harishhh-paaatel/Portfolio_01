@@ -1,0 +1,9 @@
+# Only needed to regenerate the hero images (the website itself has no dependencies)
+numpy
+opencv-python-headless
+pillow
+rembg[cpu]
+mediapipe
+pymatting
+fonttools
+brotli

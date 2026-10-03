@@ -1,6 +1,6 @@
-# Portfolio — Interactive Hero Reveal
+# K G Harish Patel — Portfolio
 
-A single-page developer portfolio built from the **Sri Tech "Interactive Hero Reveal" guide**.
+Personal portfolio of **K G Harish Patel**, AI/ML Engineer (Python • Computer Vision • Generative AI). It is built from the **Sri Tech "Interactive Hero Reveal" guide**.
 
 The hero always shows a clean editorial portrait. Underneath it is a futuristic AI version of the same portrait. That second image only appears where the cursor (or finger) moves, through an organic, liquid, constantly morphing mask.
 
@@ -29,6 +29,8 @@ Mobile  ── finger/touch position controls the reveal
 │   ├── img/hero-reveal.webp   # IMAGE 2 – futuristic portrait (masked overlay only)
 │   ├── img/favicon.svg
 │   └── fonts/                 # Outfit + JetBrains Mono (variable, SIL OFL)
+├── tools/make_hero.py         # turns a portrait photo into the two aligned hero images
+├── tools/requirements.txt     # Python packages for the tool (the website itself needs none)
 ├── docs/REQUIREMENTS.md       # the guide's requirements and how each one is met
 └── .nojekyll                  # serve files as-is on GitHub Pages
 ```
@@ -50,38 +52,60 @@ npx serve .
 3. Set **Source** to *Deploy from a branch*, pick your branch, and set the folder to `/ (root)`.
 4. The site will be published at `https://<your-username>.github.io/<repo-name>/`.
 
-## Make it yours
+## Editing the site
 
-### 1. Name, copy and links
+### 1. Content
 
-All content lives in `index.html`. Sections you should edit are marked with `<!-- EDIT: ... -->` comments:
+All content lives in `index.html`:
 
 | What | Where |
 | --- | --- |
 | Name | `<title>`, the meta tags, `.brand__name` (header + footer), the hero image `alt` |
-| Hero copy | `.eyebrow`, `.hero__title`, `.hero__lead` |
+| Hero | `.eyebrow` (role line), `.hero__title`, `.hero__lead`, `.hero__status` (availability badge), `.chip`s |
 | About text and stats | `#about` |
-| Skills | `#skills` (the four `.skill-card`s and the marquee) |
-| Projects | `#projects` (each `.project`; set `href` to the live site or case study) |
-| Experience | `#experience` |
-| Email and socials | the menu overlay and `#contact` (replace `hello@example.com`) |
+| Skills | `#skills`: one `.skill-row` per category, plus the scrolling marquee |
+| Projects | `#projects`: one `.project` per project |
+| Experience, education, achievement, community, certifications | `#experience`: `.timeline` plus the `.extras` cards |
+| Email and profiles | the menu overlay (`.menu__foot`) and `#contact` |
 
-> The About, Projects and Experience sections ship with **sample content** so the layout is complete. Replace it with your own work before publishing.
+### 2. Hero images
 
-### 2. Your own hero images
+The hero needs two images with the **same size and alignment**:
 
-The two portraits in `assets/img/` are cut out of the reference mockup in the guide, so they are placeholders. To use your own photos:
+- `assets/img/hero-default.webp`: the clean portrait, always visible.
+- `assets/img/hero-reveal.webp`: the futuristic version, shown only inside the cursor mask.
 
-1. Take a clean portrait (Image 1).
-2. Make the futuristic version from **that same photo** with an image-to-image AI tool, for example a robotic mask, glowing circuitry or armor. Keep the pose, framing and canvas size unchanged (Image 2).
-3. Remove the background from both, or use a plain background that matches `--bg: #FAFAF8`.
-4. Export both at **identical dimensions**. The two images must line up pixel for pixel. Save them as `hero-default.webp` and `hero-reveal.webp`.
-5. If your images are not 1400 × 1157, update:
-   - the `width` and `height` attributes on `.hero__img` in `index.html`
-   - `aspect-ratio: 1400 / 1157` on `.hero__portrait` in `style.css`
-   - `calc(var(--hero-h) * 1.17)` in the same rule (1.17 = width ÷ height × 0.967)
+`tools/make_hero.py` builds both from one photo:
 
-The images never move independently. Only the mask moves and changes shape.
+```bash
+pip install -r tools/requirements.txt
+
+# Option A: generate the futuristic layer automatically
+python3 tools/make_hero.py path/to/my-photo.jpg
+
+# Option B: use your own AI-edited version of the same photo
+python3 tools/make_hero.py path/to/my-photo.jpg --ai path/to/my-photo-futuristic.jpg
+```
+
+The script:
+
+1. finds the face with a 478-point face-landmark model, which it downloads on first run;
+2. removes the background;
+3. scales and places the portrait so the face sits exactly where the hero layout expects it;
+4. writes both images at 1400 × 1157.
+
+Without `--ai`, it builds a **machine-vision** version of the portrait:
+
+- a dark tech grid behind the portrait;
+- edge detection on the portrait, drawn in red;
+- a face mesh with glowing irises;
+- a face-detection box with an ID tag.
+
+This is the "AI identity" the visitor uncovers with the cursor. With `--ai`, it aligns your AI-edited photo to the original using the facial landmarks.
+
+At the end, the script prints the `background-position` to use for the little futuristic crop inside the **Let's connect** button (`.btn__icon::before` in `style.css`).
+
+For the best result, use a clear, front-facing photo from the chest up, with even lighting and a plain background, at least 1500 px wide.
 
 ### 3. Colours and type
 

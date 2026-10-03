@@ -220,7 +220,7 @@
       previewOn = true;
       if (!previewRunning) { previewRunning = true; requestAnimationFrame(previewLoop); }
     });
-    $$('.project__link', list).forEach(function (link) {
+    $$('.project__row', list).forEach(function (link) {
       link.addEventListener('pointerenter', function () {
         preview.setAttribute('data-active', link.getAttribute('data-cover'));
         preview.classList.add('is-visible');

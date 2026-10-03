@@ -9,7 +9,7 @@ This file lists every requirement in the *Interactive Hero Reveal* guide and how
 | Item | Requirement | Implementation |
 | --- | --- | --- |
 | Default | Clean portrait + editorial white composition | `assets/img/hero-default.webp` on the warm-white `#FAFAF8` hero |
-| Reveal | Futuristic AI/robotic version of the same portrait | `assets/img/hero-reveal.webp`: robotic mask and armor, dark tech backdrop, red rim light |
+| Reveal | Futuristic AI/robotic version of the same portrait | `assets/img/hero-reveal.webp`, built by `tools/make_hero.py`: a machine-vision version with face mesh, detection box, edge glow, dark tech grid and red rim light (or an AI-edited photo aligned with `--ai`) |
 | Trigger | Mouse movement across the hero | `pointermove` on the whole hero section (`hero-reveal.js`) |
 | Mask | Organic, irregular, liquid/blob-shaped reveal | Harmonic blob outline with feathered edge, velocity stretch and trailing droplets |
 | Mobile | Finger/touch position controls the reveal | Passive `touchstart` / `touchmove` / `touchend` listeners, same blob |
@@ -40,8 +40,8 @@ This file lists every requirement in the *Interactive Hero Reveal* guide and how
 
 | Guideline | Implementation |
 | --- | --- |
-| **Oversized background type**: giant cropped words such as CREATE / WEBSITES / NOT JUST / CODE, low contrast | `.hero__type`: solid `CREATE` and `CODE`, outlined `WEBSITES`, faint red `NOT JUST`; subtle pointer parallax |
-| **Main message**: "I BUILD DIGITAL EXPERIENCES THAT FEEL ALIVE." | `h1.hero__title`, last line in the accent colour, line-by-line entrance |
+| **Oversized background type**: giant cropped words such as CREATE / WEBSITES / NOT JUST / CODE, low contrast | `.hero__type`: solid `CREATE` and `CODE`, outlined `SYSTEMS` (in place of WEBSITES, to fit an ML engineer), faint red `NOT JUST`; subtle pointer parallax |
+| **Main message**: a strong statement such as "I BUILD DIGITAL EXPERIENCES THAT FEEL ALIVE." | `h1.hero__title`: "I turn real-world problems into ML systems.", taken from the About text; last line in the accent colour, line-by-line entrance |
 | **CTA system**: LET'S CONNECT + VIEW MY WORK; primary has a subtle red accent and magnetic hover; a tiny clipped crop of the futuristic image appears inside the button | `.btn--primary`: red arrow disc that morphs into a crop of `hero-reveal.webp`, red border and glow on hover, magnetic pull (`data-magnetic`). `.btn--ghost`: separate ink-fill hover |
 | **Cursor language**: small, refined indicator; says REVEAL on the hero; magnetic on CTAs; never oversized | `.cursor`: 12 px red dot with a `REVEAL` pill over the portrait; becomes a thin 44 px ring over CTAs; fine pointers only |
 | **Visual system**: warm white, black, soft gray, `#FF3F6C` accent concentrated on interaction states and the futuristic image | Tokens in `:root` in `style.css` |
@@ -63,4 +63,4 @@ This file lists every requirement in the *Interactive Hero Reveal* guide and how
 
 > The goal is not simply to show two images. The interaction should communicate a second identity: the visitor sees a polished developer by default, then discovers the AI/creative layer through exploration. The reveal should feel intentional, tactile and premium.
 
-The rest of the site carries the same idea. Sections open with a "polished developer by default, creative technologist underneath" message. The AI/LLM skill card, the project covers, the menu and the contact section all reuse the dark grid and red glow of the futuristic layer.
+The rest of the site carries the same idea. The About section opens with "Engineer by default. AI builder underneath." The Achievement card, the project covers, the menu and the contact section all reuse the dark grid and red glow of the futuristic layer.
