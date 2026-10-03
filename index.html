@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Sushmita Dasari — Full Stack Developer · AI · Creative Technologist</title>
+  <meta name="description" content="Developer, designer and creative technologist crafting high-performance websites, interactive experiences and AI-powered products.">
+  <meta name="theme-color" content="#FAFAF8">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Sushmita Dasari — I build digital experiences that feel alive.">
+  <meta property="og:description" content="Full Stack Developer · AI · Creative Technologist">
+  <meta property="og:image" content="assets/img/hero-default.webp">
+
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+
+  <link rel="preload" href="assets/fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Both hero layers are fetched up front so the reveal is instant on first hover -->
+  <link rel="preload" as="image" href="assets/img/hero-default.webp" type="image/webp">
+  <link rel="preload" as="image" href="assets/img/hero-reveal.webp" type="image/webp">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============================== HEADER ============================== -->
+  <header class="header" data-header>
+    <a class="brand" href="#top" aria-label="Sushmita Dasari — home">
+      <span class="brand__line" aria-hidden="true"></span>
+      <span class="brand__name">Sushmita Dasari</span>
+    </a>
+
+    <nav class="nav" aria-label="Primary">
+      <a class="nav__link" href="#about">About</a>
+      <a class="nav__link" href="#skills">Skills</a>
+      <a class="nav__link" href="#projects">Projects</a>
+      <a class="nav__link" href="#experience">Experience</a>
+      <a class="nav__link" href="#contact">Contact</a>
+    </nav>
+
+    <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu" data-menu-toggle>
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <!-- ============================== MENU OVERLAY ============================== -->
+  <div class="menu" id="menu" aria-hidden="true" data-menu>
+    <div class="menu__inner">
+      <p class="mono-label"><span class="mono-label__index">[ ✶ ]</span> Navigate</p>
+      <nav class="menu__nav" aria-label="Menu">
+        <a class="menu__link" href="#top"><span class="menu__num">00</span>Home</a>
+        <a class="menu__link" href="#about"><span class="menu__num">01</span>About</a>
+        <a class="menu__link" href="#skills"><span class="menu__num">02</span>Skills</a>
+        <a class="menu__link" href="#projects"><span class="menu__num">03</span>Projects</a>
+        <a class="menu__link" href="#experience"><span class="menu__num">04</span>Experience</a>
+        <a class="menu__link" href="#contact"><span class="menu__num">05</span>Contact</a>
+      </nav>
+      <div class="menu__foot">
+        <a href="mailto:hello@example.com" class="menu__mail">hello@example.com</a>
+        <div class="menu__socials">
+          <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://x.com/" target="_blank" rel="noopener">X / Twitter</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main id="main">
+
+    <!-- ============================== 01 · HERO ============================== -->
+    <section class="hero" id="top" data-hero aria-label="Introduction">
+
+      <!-- Oversized low-contrast background type -->
+      <div class="hero__type" aria-hidden="true" data-hero-type>
+        <span class="hero__word hero__word--create">Create</span>
+        <span class="hero__word hero__word--websites">Websites</span>
+        <span class="hero__word hero__word--notjust">Not just</span>
+        <span class="hero__word hero__word--code">Code</span>
+      </div>
+
+      <!-- Portrait: Image 1 is the permanent base layer, Image 2 is drawn only inside the organic mask -->
+      <div class="hero__portrait">
+        <div class="hero__glow" aria-hidden="true"></div>
+        <div class="hero__stage" data-reveal-stage>
+          <img class="hero__img" src="assets/img/hero-default.webp" width="1400" height="1157"
+               alt="Portrait of Sushmita Dasari" fetchpriority="high" decoding="async" draggable="false">
+          <canvas class="hero__reveal" data-reveal-canvas data-src="assets/img/hero-reveal.webp" aria-hidden="true"></canvas>
+        </div>
+
+        <div class="hero__chips" aria-hidden="true">
+          <span class="chip chip--react"><span class="chip__code">&lt;/&gt;</span> React <i>·</i> Node</span>
+          <span class="chip chip--ai"><span class="chip__dot"></span> AI / LLM</span>
+          <span class="chip chip--creative"><span class="chip__plus">+</span> Creative Dev</span>
+        </div>
+      </div>
+
+      <!-- Meta labels -->
+      <p class="hero__index mono-label" data-reveal-up><span class="mono-label__index">[ 01 ]</span> Index / Hero</p>
+      <p class="hero__status mono-label" data-reveal-up><span class="pulse-dot" aria-hidden="true"></span> Available for new projects</p>
+      <p class="hero__vertical mono-label" aria-hidden="true">Portfolio — © <span data-year>2026</span></p>
+      <div class="hero__scroll mono-label" aria-hidden="true">
+        <span class="hero__hint"><span class="only-hover">( Hover to discover )</span><span class="only-touch">( Touch to discover )</span></span>
+        <span class="hero__scroll-label">Scroll</span>
+        <span class="hero__scroll-line"></span>
+      </div>
+
+      <!-- Main message -->
+      <div class="hero__content">
+        <p class="eyebrow" data-reveal-up>
+          <span class="eyebrow__line" aria-hidden="true"></span>
+          Full Stack Developer <span class="eyebrow__dot">•</span> AI <span class="eyebrow__dot">•</span> Creative Technologist
+        </p>
+
+        <h1 class="hero__title">
+          <span class="line"><span data-reveal-line>I build digital</span></span>
+          <span class="line"><span data-reveal-line>experiences that</span></span>
+          <span class="line line--accent"><span data-reveal-line>feel alive.</span></span>
+        </h1>
+
+        <p class="hero__lead" data-reveal-up>
+          Developer, designer and creative technologist crafting high-performance websites,
+          interactive experiences and AI-powered products.
+        </p>
+
+        <div class="hero__ctas" data-reveal-up>
+          <a class="btn btn--primary" href="#contact" data-magnetic>
+            <span class="btn__label">Let's connect</span>
+            <span class="btn__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </a>
+          <a class="btn btn--ghost" href="#projects" data-magnetic>
+            <span class="btn__label">View my work</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== 02 · ABOUT ============================== -->
+    <!-- EDIT: replace the copy and numbers below with your own story -->
+    <section class="section about" id="about" aria-labelledby="about-title">
+      <span class="section__ghost" aria-hidden="true">About</span>
+      <div class="section__head">
+        <p class="mono-label" data-reveal-up><span class="mono-label__index">[ 02 ]</span> About / Story</p>
+        <h2 class="section__title" id="about-title" data-reveal-up>
+          Polished developer by default.<br>
+          <span class="text-accent">Creative technologist</span> underneath.
+        </h2>
+      </div>
+
+      <div class="about__grid">
+        <div class="about__text" data-reveal-up>
+          <p class="about__lead">
+            I design and engineer digital products where performance, motion and AI meet —
+            from pixel-perfect interfaces to the systems that power them.
+          </p>
+          <p>
+            My work sits between engineering and design. I care about how a product feels in the hand:
+            the weight of an interaction, the timing of a transition, the moment a visitor discovers something
+            they didn't expect. Behind that sits clean, typed, well-tested code that scales.
+          </p>
+          <p>
+            Lately I've been exploring how large language models can make interfaces more personal and more useful —
+            building AI features that feel like part of the product, not a bolt-on chat box.
+          </p>
+        </div>
+
+        <ul class="stats" data-reveal-up>
+          <li class="stat"><span class="stat__num" data-count="5">0</span><span class="stat__plus">+</span><span class="stat__label">Years building for the web</span></li>
+          <li class="stat"><span class="stat__num" data-count="40">0</span><span class="stat__plus">+</span><span class="stat__label">Projects shipped</span></li>
+          <li class="stat"><span class="stat__num" data-count="12">0</span><span class="stat__plus">+</span><span class="stat__label">AI-powered products</span></li>
+          <li class="stat"><span class="stat__num" data-count="100">0</span><span class="stat__plus">%</span><span class="stat__label">Lighthouse-minded performance</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================== 03 · SKILLS ============================== -->
+    <section class="section skills" id="skills" aria-labelledby="skills-title">
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee__track">
+          <span>React</span><i>✶</i><span class="is-outline">Next.js</span><i>✶</i><span>TypeScript</span><i>✶</i><span class="is-outline">Node</span><i>✶</i><span>AI / LLM</span><i>✶</i><span class="is-outline">WebGL</span><i>✶</i><span>Motion</span><i>✶</i>
+          <span>React</span><i>✶</i><span class="is-outline">Next.js</span><i>✶</i><span>TypeScript</span><i>✶</i><span class="is-outline">Node</span><i>✶</i><span>AI / LLM</span><i>✶</i><span class="is-outline">WebGL</span><i>✶</i><span>Motion</span><i>✶</i>
+        </div>
+      </div>
+
+      <div class="section__head">
+        <p class="mono-label" data-reveal-up><span class="mono-label__index">[ 03 ]</span> Skills / Stack</p>
+        <h2 class="section__title" id="skills-title" data-reveal-up>Tools I use to make<br>ideas <span class="text-accent">feel alive.</span></h2>
+      </div>
+
+      <!-- EDIT: adjust skill groups to your own stack -->
+      <div class="skills__grid">
+        <article class="skill-card" data-reveal-up>
+          <header class="skill-card__head"><span class="skill-card__num">01</span><span class="skill-card__icon" aria-hidden="true">&lt;/&gt;</span></header>
+          <h3 class="skill-card__title">Frontend</h3>
+          <p class="skill-card__text">Fast, accessible interfaces with motion that has intent.</p>
+          <ul class="tags"><li>React</li><li>Next.js</li><li>TypeScript</li><li>Tailwind</li><li>GSAP</li><li>Three.js</li></ul>
+        </article>
+        <article class="skill-card" data-reveal-up>
+          <header class="skill-card__head"><span class="skill-card__num">02</span><span class="skill-card__icon" aria-hidden="true">{ }</span></header>
+          <h3 class="skill-card__title">Backend</h3>
+          <p class="skill-card__text">APIs and data layers that stay simple as products grow.</p>
+          <ul class="tags"><li>Node.js</li><li>Express</li><li>PostgreSQL</li><li>MongoDB</li><li>GraphQL</li><li>Docker</li></ul>
+        </article>
+        <article class="skill-card skill-card--accent" data-reveal-up>
+          <header class="skill-card__head"><span class="skill-card__num">03</span><span class="skill-card__icon" aria-hidden="true">●</span></header>
+          <h3 class="skill-card__title">AI / LLM</h3>
+          <p class="skill-card__text">LLM features that feel native — retrieval, agents and evals.</p>
+          <ul class="tags"><li>LLM APIs</li><li>RAG</li><li>Vector DBs</li><li>LangChain</li><li>Python</li><li>Prompting</li></ul>
+        </article>
+        <article class="skill-card" data-reveal-up>
+          <header class="skill-card__head"><span class="skill-card__num">04</span><span class="skill-card__icon" aria-hidden="true">+</span></header>
+          <h3 class="skill-card__title">Creative</h3>
+          <p class="skill-card__text">Design systems, prototypes and experiments on the canvas.</p>
+          <ul class="tags"><li>Figma</li><li>Canvas</li><li>WebGL</li><li>Shaders</li><li>UX</li><li>Prototyping</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============================== 04 · PROJECTS ============================== -->
+    <!-- EDIT: swap these sample projects for your own work -->
+    <section class="section projects" id="projects" aria-labelledby="projects-title">
+      <span class="section__ghost" aria-hidden="true">Work</span>
+      <div class="section__head section__head--row">
+        <div>
+          <p class="mono-label" data-reveal-up><span class="mono-label__index">[ 04 ]</span> Selected / Work</p>
+          <h2 class="section__title" id="projects-title" data-reveal-up>Selected projects.</h2>
+        </div>
+        <p class="section__aside" data-reveal-up>A few things I've designed, engineered and shipped — each one a small experiment in how the web can feel.</p>
+      </div>
+
+      <ol class="project-list" data-projects>
+        <li class="project" data-reveal-up>
+          <a class="project__link" href="#" data-cover="1">
+            <span class="project__num">01</span>
+            <span class="project__main">
+              <span class="project__title">Neural Canvas</span>
+              <span class="project__desc">AI-assisted design tool that turns rough sketches into production-ready UI components.</span>
+            </span>
+            <span class="project__tags">Next.js · LLM · Canvas</span>
+            <span class="project__year">2026</span>
+            <span class="project__arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+        <li class="project" data-reveal-up>
+          <a class="project__link" href="#" data-cover="2">
+            <span class="project__num">02</span>
+            <span class="project__main">
+              <span class="project__title">Pulse Commerce</span>
+              <span class="project__desc">Headless storefront with sub-second loads, motion-led product pages and a smart search.</span>
+            </span>
+            <span class="project__tags">React · Node · Stripe</span>
+            <span class="project__year">2025</span>
+            <span class="project__arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+        <li class="project" data-reveal-up>
+          <a class="project__link" href="#" data-cover="3">
+            <span class="project__num">03</span>
+            <span class="project__main">
+              <span class="project__title">Echo Assistant</span>
+              <span class="project__desc">Retrieval-augmented support agent trained on product docs, with human hand-off built in.</span>
+            </span>
+            <span class="project__tags">Python · RAG · Vector DB</span>
+            <span class="project__year">2025</span>
+            <span class="project__arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+        <li class="project" data-reveal-up>
+          <a class="project__link" href="#" data-cover="4">
+            <span class="project__num">04</span>
+            <span class="project__main">
+              <span class="project__title">Studio Motion</span>
+              <span class="project__desc">Award-style agency site — WebGL transitions, scroll choreography and a custom CMS.</span>
+            </span>
+            <span class="project__tags">WebGL · GSAP · CMS</span>
+            <span class="project__year">2024</span>
+            <span class="project__arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+      </ol>
+
+      <!-- Floating cover that follows the cursor over the project list -->
+      <div class="project-preview" aria-hidden="true" data-project-preview>
+        <div class="project-preview__inner">
+          <div class="cover cover--1"><span>NC</span></div>
+          <div class="cover cover--2"><span>PC</span></div>
+          <div class="cover cover--3"><span>EA</span></div>
+          <div class="cover cover--4"><span>SM</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== 05 · EXPERIENCE ============================== -->
+    <!-- EDIT: replace with your own roles and dates -->
+    <section class="section experience" id="experience" aria-labelledby="experience-title">
+      <div class="section__head">
+        <p class="mono-label" data-reveal-up><span class="mono-label__index">[ 05 ]</span> Experience / Path</p>
+        <h2 class="section__title" id="experience-title" data-reveal-up>Where I've been building.</h2>
+      </div>
+
+      <ol class="timeline">
+        <li class="timeline__item" data-reveal-up>
+          <span class="timeline__period mono-label">2024 — Now</span>
+          <div class="timeline__body">
+            <h3 class="timeline__role">Full Stack &amp; AI Developer <span class="timeline__at">/ Independent</span></h3>
+            <p>Designing and building AI-powered products and interactive marketing sites for startups and studios.</p>
+            <ul class="tags"><li>Next.js</li><li>LLM</li><li>Design systems</li></ul>
+          </div>
+        </li>
+        <li class="timeline__item" data-reveal-up>
+          <span class="timeline__period mono-label">2022 — 2024</span>
+          <div class="timeline__body">
+            <h3 class="timeline__role">Frontend Engineer <span class="timeline__at">/ Product Studio</span></h3>
+            <p>Led the frontend of client products end to end — component libraries, performance budgets and motion.</p>
+            <ul class="tags"><li>React</li><li>TypeScript</li><li>GSAP</li></ul>
+          </div>
+        </li>
+        <li class="timeline__item" data-reveal-up>
+          <span class="timeline__period mono-label">2020 — 2022</span>
+          <div class="timeline__body">
+            <h3 class="timeline__role">Web Developer <span class="timeline__at">/ Digital Agency</span></h3>
+            <p>Shipped responsive websites and campaign microsites with a focus on craft and accessibility.</p>
+            <ul class="tags"><li>JavaScript</li><li>Node.js</li><li>CMS</li></ul>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ============================== 06 · CONTACT ============================== -->
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="contact__inner">
+        <p class="mono-label mono-label--light" data-reveal-up><span class="mono-label__index">[ 06 ]</span> Contact / Hello</p>
+        <h2 class="contact__title" id="contact-title">
+          <span class="line"><span data-reveal-line>Have an idea?</span></span>
+          <span class="line"><span data-reveal-line>Let's make it</span></span>
+          <span class="line line--accent"><span data-reveal-line>feel alive.</span></span>
+        </h2>
+
+        <!-- EDIT: put your real email address here -->
+        <div class="contact__actions" data-reveal-up>
+          <a class="btn btn--primary btn--on-dark" href="mailto:hello@example.com" data-magnetic>
+            <span class="btn__label">hello@example.com</span>
+            <span class="btn__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </a>
+          <a class="btn btn--ghost btn--on-dark" href="#top" data-magnetic><span class="btn__label">Back to top</span></a>
+        </div>
+
+        <!-- EDIT: point these at your own profiles -->
+        <ul class="socials" data-reveal-up>
+          <li><a href="https://github.com/" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a></li>
+          <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span></a></li>
+          <li><a href="https://x.com/" target="_blank" rel="noopener">X / Twitter <span aria-hidden="true">↗</span></a></li>
+          <li><a href="https://dribbble.com/" target="_blank" rel="noopener">Dribbble <span aria-hidden="true">↗</span></a></li>
+        </ul>
+      </div>
+
+      <footer class="footer">
+        <span class="brand brand--light"><span class="brand__line" aria-hidden="true"></span><span class="brand__name">Sushmita Dasari</span></span>
+        <span class="footer__meta mono-label mono-label--light">Build • Create • Experiment</span>
+        <span class="footer__meta mono-label mono-label--light">© <span data-year>2026</span> — All rights reserved</span>
+      </footer>
+    </section>
+  </main>
+
+  <!-- Small, refined cursor indicator (fine pointers only) -->
+  <div class="cursor" aria-hidden="true" data-cursor>
+    <span class="cursor__dot"></span>
+    <span class="cursor__label">Reveal</span>
+  </div>
+
+  <script src="assets/js/hero-reveal.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
