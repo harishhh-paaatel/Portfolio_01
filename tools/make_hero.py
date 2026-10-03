@@ -74,6 +74,30 @@ def landmarks(rgb):
     return np.array([[p.x * w, p.y * h] for p in res.face_landmarks[0]], np.float32)
 
 
+def landmark_dict(rgb):
+    """3D landmarks + mesh topology for an image, in the format the futuristic renderer expects."""
+    from mediapipe.tasks.python import vision
+    import mediapipe as mp
+    landmarks(rgb)  # make sure the landmarker is initialised
+    u8 = np.ascontiguousarray((np.clip(rgb, 0, 1) * 255).astype(np.uint8))
+    res = _landmarker.detect(mp.Image(image_format=mp.ImageFormat.SRGB, data=u8))
+    if not res.face_landmarks:
+        sys.exit('No face found after placement.')
+    h, w = rgb.shape[:2]
+    pts = [[p.x * w, p.y * h, p.z * w] for p in res.face_landmarks[0]]
+    C = vision.FaceLandmarksConnections
+    names = ['FACE_LANDMARKS_TESSELATION', 'FACE_LANDMARKS_CONTOURS', 'FACE_LANDMARKS_FACE_OVAL', 'FACE_LANDMARKS_LIPS',
+             'FACE_LANDMARKS_LEFT_EYE', 'FACE_LANDMARKS_RIGHT_EYE', 'FACE_LANDMARKS_LEFT_EYEBROW',
+             'FACE_LANDMARKS_RIGHT_EYEBROW', 'FACE_LANDMARKS_NOSE', 'FACE_LANDMARKS_LEFT_IRIS', 'FACE_LANDMARKS_RIGHT_IRIS']
+    conns = {n: [[c.start, c.end] for c in getattr(C, n)] for n in names}
+    edges = set(tuple(sorted(e)) for e in conns['FACE_LANDMARKS_TESSELATION'])
+    adj = {}
+    for a_, b_ in edges:
+        adj.setdefault(a_, set()).add(b_); adj.setdefault(b_, set()).add(a_)
+    tris = sorted(set(tuple(sorted((a_, b_, c_))) for a_, b_ in edges for c_ in adj[a_] & adj[b_]))
+    return {'image_size': [w, h], 'landmarks_xyz_px': pts, 'connections': conns, 'triangles': [list(t) for t in tris]}
+
+
 def segment(rgb):
     from rembg import remove, new_session
     im = Image.fromarray((rgb * 255).astype(np.uint8))
