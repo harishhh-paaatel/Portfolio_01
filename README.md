@@ -1,6 +1,6 @@
 # K G Harish Patel — Portfolio
 
-Personal portfolio of **K G Harish Patel**, AI/ML Engineer (Python • Computer Vision • Generative AI). It is built from the **Sri Tech "Interactive Hero Reveal" guide**.
+Personal portfolio of **K G Harish Patel**, AI/ML Engineer (Python • Computer Vision • Generative AI). 
 
 The hero always shows a clean editorial portrait. Underneath it is a futuristic AI version of the same portrait. That second image only appears where the cursor (or finger) moves, through an organic, liquid, constantly morphing mask.
 
