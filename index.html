@@ -11,7 +11,9 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="K G Harish Patel — AI/ML Engineer">
   <meta property="og:description" content="AI/ML Engineer • Python • Computer Vision • Generative AI">
-  <meta property="og:image" content="assets/img/hero-default.webp">
+  <meta property="og:url" content="https://harishhh-paaatel.github.io/Portfolio_01/">
+  <meta property="og:image" content="https://harishhh-paaatel.github.io/Portfolio_01/assets/img/hero-default.webp">
+  <meta name="twitter:card" content="summary_large_image">
 
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 
@@ -49,16 +51,16 @@
   </header>
 
   <!-- ============================== MENU OVERLAY ============================== -->
-  <div class="menu" id="menu" aria-hidden="true" data-menu>
+  <div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Menu" aria-hidden="true" data-menu>
     <div class="menu__inner">
-      <p class="mono-label"><span class="mono-label__index">[ ✶ ]</span> Navigate</p>
+      <p class="mono-label"><span class="mono-label__index" aria-hidden="true">[ ✶ ]</span> Navigate</p>
       <nav class="menu__nav" aria-label="Menu">
-        <a class="menu__link" href="#top"><span class="menu__num">00</span>Home</a>
-        <a class="menu__link" href="#about"><span class="menu__num">01</span>About</a>
-        <a class="menu__link" href="#skills"><span class="menu__num">02</span>Skills</a>
-        <a class="menu__link" href="#projects"><span class="menu__num">03</span>Projects</a>
-        <a class="menu__link" href="#experience"><span class="menu__num">04</span>Experience</a>
-        <a class="menu__link" href="#contact"><span class="menu__num">05</span>Contact</a>
+        <a class="menu__link" href="#top"><span class="menu__num" aria-hidden="true">00</span>Home</a>
+        <a class="menu__link" href="#about"><span class="menu__num" aria-hidden="true">01</span>About</a>
+        <a class="menu__link" href="#skills"><span class="menu__num" aria-hidden="true">02</span>Skills</a>
+        <a class="menu__link" href="#projects"><span class="menu__num" aria-hidden="true">03</span>Projects</a>
+        <a class="menu__link" href="#experience"><span class="menu__num" aria-hidden="true">04</span>Experience</a>
+        <a class="menu__link" href="#contact"><span class="menu__num" aria-hidden="true">05</span>Contact</a>
       </nav>
       <div class="menu__foot">
         <a href="mailto:kgharishpatel@gmail.com" class="menu__mail">kgharishpatel@gmail.com</a>
@@ -100,7 +102,7 @@
       </div>
 
       <!-- Meta labels -->
-      <p class="hero__index mono-label" data-reveal-up><span class="mono-label__index">[ 01 ]</span> Index / Hero</p>
+      <p class="hero__index mono-label" data-reveal-up><span class="mono-label__index" aria-hidden="true">[ 01 ]</span> Index / Hero</p>
       <p class="hero__status mono-label" data-reveal-up><span class="pulse-dot" aria-hidden="true"></span> Open to AI/ML &amp; Software Engineering Internships</p>
       <p class="hero__vertical mono-label" aria-hidden="true">Portfolio — © <span data-year>2026</span></p>
       <div class="hero__scroll mono-label" aria-hidden="true">
@@ -149,7 +151,7 @@
     <section class="section about" id="about" aria-labelledby="about-title">
       <span class="section__ghost" aria-hidden="true">About</span>
       <div class="section__head">
-        <p class="mono-label" data-reveal-up><span class="mono-label__index">[ 02 ]</span> About / Story</p>
+        <p class="mono-label" data-reveal-up><span class="mono-label__index" aria-hidden="true">[ 02 ]</span> About / Story</p>
         <h2 class="section__title" id="about-title" data-reveal-up>
           Engineer by default.<br>
           <span class="text-accent">AI builder</span> underneath.
@@ -187,7 +189,7 @@
             <span class="stat__label">Tutorials on Coding Kannadiga</span>
           </li>
           <li class="stat">
-            <span class="stat__num" data-count="2">2</span><span class="stat__plus">nd</span>
+            <span class="stat__num">2<span class="stat__plus">nd</span></span>
             <span class="stat__label">Prize · Innovotsava 2026 Drone Fair</span>
           </li>
         </ul>
@@ -196,15 +198,16 @@
 
     <!-- ============================== 03 · SKILLS ============================== -->
     <section class="section skills" id="skills" aria-labelledby="skills-title">
-      <div class="marquee" aria-hidden="true">
-        <div class="marquee__track">
+      <div class="marquee">
+        <button class="marquee__toggle" type="button" aria-pressed="false" data-marquee-toggle>Pause motion</button>
+        <div class="marquee__track" aria-hidden="true">
           <span>Python</span><i>✶</i><span class="is-outline">PyTorch</span><i>✶</i><span>YOLOv8</span><i>✶</i><span class="is-outline">OpenCV</span><i>✶</i><span>GraphRAG</span><i>✶</i><span class="is-outline">FastAPI</span><i>✶</i><span>Edge AI</span><i>✶</i><span class="is-outline">LLMs</span><i>✶</i>
           <span>Python</span><i>✶</i><span class="is-outline">PyTorch</span><i>✶</i><span>YOLOv8</span><i>✶</i><span class="is-outline">OpenCV</span><i>✶</i><span>GraphRAG</span><i>✶</i><span class="is-outline">FastAPI</span><i>✶</i><span>Edge AI</span><i>✶</i><span class="is-outline">LLMs</span><i>✶</i>
         </div>
       </div>
 
       <div class="section__head">
-        <p class="mono-label" data-reveal-up><span class="mono-label__index">[ 03 ]</span> Skills / Stack</p>
+        <p class="mono-label" data-reveal-up><span class="mono-label__index" aria-hidden="true">[ 03 ]</span> Skills / Stack</p>
         <h2 class="section__title" id="skills-title" data-reveal-up>The stack behind<br>my <span class="text-accent">ML systems.</span></h2>
       </div>
 
@@ -235,7 +238,7 @@
         </li>
         <li class="skill-row skill-row--accent" data-reveal-up>
           <span class="skill-row__num">04</span>
-          <h3 class="skill-row__title">Generative AI &amp; NLP</h3>
+          <h3 class="skill-row__title">Generative AI &amp;&nbsp;NLP</h3>
           <ul class="tags">
             <li>LLMs</li><li>RAG</li><li>GraphRAG</li><li>Knowledge Graphs</li><li>Entity &amp; Relation Extraction</li><li>NetworkX</li>
           </ul>
@@ -272,12 +275,12 @@
       <span class="section__ghost" aria-hidden="true">Work</span>
       <div class="section__head section__head--row">
         <div>
-          <p class="mono-label" data-reveal-up><span class="mono-label__index">[ 04 ]</span> Selected / Work</p>
+          <p class="mono-label" data-reveal-up><span class="mono-label__index" aria-hidden="true">[ 04 ]</span> Selected / Work</p>
           <h2 class="section__title" id="projects-title" data-reveal-up>Selected projects.</h2>
         </div>
         <p class="section__aside" data-reveal-up>
           Four projects across GraphRAG, computer vision, edge AI and full-stack engineering —
-          each one taking ML from an experiment toward a working system.
+          each one built as a working system, not just an experiment.
         </p>
       </div>
 
@@ -306,7 +309,7 @@
           <article class="project__row" data-cover="2">
             <span class="project__num">02</span>
             <div class="project__main">
-              <h3 class="project__title">PCB Defect Detection &amp; Edge AI</h3>
+              <h3 class="project__title">PCB Defect Detection &amp; Edge&nbsp;AI</h3>
               <p class="project__tagline">Computer vision system for detecting manufacturing defects on PCBs using deep learning.</p>
               <p class="project__desc">
                 At ProEmbSys, I translated PCB inspection requirements into an object-detection problem and worked with
@@ -387,7 +390,7 @@
     <!-- ============================== 05 · EXPERIENCE ============================== -->
     <section class="section experience" id="experience" aria-labelledby="experience-title">
       <div class="section__head">
-        <p class="mono-label" data-reveal-up><span class="mono-label__index">[ 05 ]</span> Experience / Path</p>
+        <p class="mono-label" data-reveal-up><span class="mono-label__index" aria-hidden="true">[ 05 ]</span> Experience / Path</p>
         <h2 class="section__title" id="experience-title" data-reveal-up>Where I've been building.</h2>
       </div>
 
@@ -395,7 +398,7 @@
         <li class="timeline__item" data-reveal-up>
           <span class="timeline__period mono-label">Sep 2026 — Present</span>
           <div class="timeline__body">
-            <h3 class="timeline__role">Project Intern — Edge AI &amp; Machine Vision</h3>
+            <h3 class="timeline__role">Project Intern — Edge&nbsp;AI &amp; Machine&nbsp;Vision</h3>
             <p class="timeline__org">ProEmbSys Technologies Pvt. Ltd. · Bengaluru</p>
             <p>Working on applied Computer Vision and Edge AI problems for engineering and manufacturing applications.</p>
             <ul class="bullets">
@@ -454,7 +457,7 @@
         </article>
 
         <article class="extra-card" data-reveal-up>
-          <p class="extra-card__kicker mono-label">Certifications</p>
+          <h3 class="extra-card__kicker mono-label">Certifications</h3>
           <ul class="certs">
             <li>
               <span class="certs__name">Software Engineering Job Simulation</span>
@@ -472,7 +475,7 @@
     <!-- ============================== 06 · CONTACT ============================== -->
     <section class="contact" id="contact" aria-labelledby="contact-title">
       <div class="contact__inner">
-        <p class="mono-label mono-label--light" data-reveal-up><span class="mono-label__index">[ 06 ]</span> Contact / Hello</p>
+        <p class="mono-label mono-label--light" data-reveal-up><span class="mono-label__index" aria-hidden="true">[ 06 ]</span> Contact / Hello</p>
         <h2 class="contact__title" id="contact-title">
           <span class="line"><span data-reveal-line>Have a problem</span></span>
           <span class="line"><span data-reveal-line>worth solving?</span></span>
@@ -497,7 +500,7 @@
 
       <footer class="footer">
         <span class="brand brand--light"><span class="brand__line" aria-hidden="true"></span><span class="brand__name">K G Harish Patel</span></span>
-        <span class="footer__meta mono-label mono-label--light">AI/ML • Computer Vision • Generative AI</span>
+        <span class="footer__meta mono-label mono-label--light">AI/ML • Computer Vision • Generative&nbsp;AI</span>
         <span class="footer__meta mono-label mono-label--light">© <span data-year>2026</span> — All rights reserved</span>
       </footer>
     </section>

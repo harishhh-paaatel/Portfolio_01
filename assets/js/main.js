@@ -22,8 +22,11 @@
 
   /* -------------------------------------------------------------- header */
   var header = $('[data-header]');
+  var darkZone = $('#contact');
   function onScroll() {
+    var overDark = !!darkZone && darkZone.getBoundingClientRect().top <= header.offsetHeight / 2;
     header.classList.toggle('is-scrolled', window.scrollY > 24);
+    header.classList.toggle('is-dark', overDark);
   }
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
@@ -45,14 +48,18 @@
   /* ---------------------------------------------------------------- menu */
   var menu = $('[data-menu]');
   var toggle = $('[data-menu-toggle]');
+  var menuFocusTimer;
   function setMenu(open) {
+    clearTimeout(menuFocusTimer);
+    // Keep keyboard and screen-reader focus inside the open menu
+    $$('.skip-link, #main').forEach(function (el) { el.inert = open; });
     doc.classList.toggle('menu-open', open);
     toggle.setAttribute('aria-expanded', String(open));
     toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
     menu.setAttribute('aria-hidden', String(!open));
     if (open) {
       var first = $('.menu__link', menu);
-      if (first) setTimeout(function () { first.focus(); }, 300);
+      if (first) menuFocusTimer = setTimeout(function () { first.focus(); }, 300);
     } else {
       toggle.focus({ preventScroll: true });
     }
@@ -65,13 +72,33 @@
     if (e.key === 'Escape' && doc.classList.contains('menu-open')) setMenu(false);
   });
 
+  /* ------------------------------------------------------------- marquee */
+  var marquee = $('.marquee');
+  var marqueeToggle = $('[data-marquee-toggle]');
+  if (marquee && marqueeToggle) {
+    marqueeToggle.addEventListener('click', function () {
+      var paused = marquee.classList.toggle('is-paused');
+      marqueeToggle.setAttribute('aria-pressed', String(paused));
+      marqueeToggle.textContent = paused ? 'Play motion' : 'Pause motion';
+    });
+  }
+
   /* ------------------------------------------------------ scroll reveals */
   var revealEls = $$('[data-reveal-up], [data-reveal-line]');
   if ('IntersectionObserver' in window && !reduced) {
     var revealObserver = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (!entry.isIntersecting) return;
-        (entry.target._revealTarget || entry.target).classList.add('is-in');
+        var t = entry.target._revealTarget || entry.target;
+        t.classList.add('is-in');
+        if (t.hasAttribute('data-reveal-up')) {
+          // Drop the reveal hook afterwards so the element's own hover transitions apply again
+          t.addEventListener('transitionend', function done(e) {
+            if (e.target !== t || e.propertyName !== 'transform') return;
+            t.removeEventListener('transitionend', done);
+            t.removeAttribute('data-reveal-up');
+          });
+        }
         revealObserver.unobserve(entry.target);
       });
     }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
@@ -216,6 +243,7 @@
     }
     list.addEventListener('pointermove', function (e) {
       pp.x = e.clientX; pp.y = e.clientY;
+      preview.classList.toggle('is-left', e.clientX > window.innerWidth * 0.55);
       if (!previewOn) { pc.x = pp.x; pc.y = pp.y; }
       previewOn = true;
       if (!previewRunning) { previewRunning = true; requestAnimationFrame(previewLoop); }
@@ -229,6 +257,9 @@
     list.addEventListener('pointerleave', function () {
       previewOn = false;
       preview.classList.remove('is-visible');
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') preview.classList.remove('is-visible');
     });
   }
 })();

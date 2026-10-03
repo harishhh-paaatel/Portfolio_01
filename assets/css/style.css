@@ -1,5 +1,5 @@
 /* =============================================================================
-   Sushmita Dasari — Portfolio
+   K G Harish Patel — Portfolio
    Visual system: warm white, black, soft gray and #FF3F6C as the controlled
    accent. Red is kept around interaction states and the futuristic layer.
    Desktop hero proportions are taken from the 2048×1197 reference mock.
@@ -46,7 +46,7 @@
   --ink: #0E0E0E;
   --type: #EDEDEB;        /* oversized background type */
   --line: #E3E3DF;
-  --muted: #8C8C88;
+  --muted: #6A6A64;
   --text: #66665F;
   --accent: #FF3F6C;
   --accent-rgb: 255, 63, 108;
@@ -179,6 +179,11 @@ ol, ul { list-style: none; padding: 0; }
   backdrop-filter: blur(14px) saturate(1.4);
   box-shadow: 0 1px 0 rgba(14, 14, 14, .06);
 }
+.header.is-dark { background: rgba(15, 14, 16, .72); box-shadow: 0 1px 0 rgba(255, 255, 255, .08); }
+.header.is-dark .brand { color: #fff; }
+.header.is-dark .nav__link { color: rgba(255, 255, 255, .62); }
+.header.is-dark .nav__link:hover, .header.is-dark .nav__link.is-active { color: #fff; }
+.header.is-dark .menu-btn { border-color: rgba(255, 255, 255, .25); background: rgba(255, 255, 255, .06); }
 html.menu-open .header { background: transparent; box-shadow: none; -webkit-backdrop-filter: none; backdrop-filter: none; }
 
 .brand {
@@ -334,6 +339,11 @@ html.menu-open .menu__link:nth-child(6) { transition-delay: .5s; }
   isolation: isolate;
 }
 html.has-cursor .hero, html.has-cursor .hero * { cursor: none; }
+html.has-cursor .hero a, html.has-cursor .hero button { cursor: pointer; }
+@media (prefers-reduced-motion: reduce), (prefers-contrast: more) {
+  html.has-cursor .hero, html.has-cursor .hero * { cursor: auto; }
+  html.has-cursor .hero a, html.has-cursor .hero button { cursor: pointer; }
+}
 
 /* Oversized background type ------------------------------------------- */
 .hero__type {
@@ -461,11 +471,11 @@ html.has-cursor .hero, html.has-cursor .hero * { cursor: none; }
   border-radius: 999px;
   white-space: nowrap;
   /* frosted backing keeps the label readable over dark clothing in the portrait */
-  background: rgba(250, 250, 248, .78);
+  background: rgba(250, 250, 248, .94);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }
-.hero__hint { color: var(--muted); letter-spacing: .3em; }
+.hero__hint { color: #55554F; letter-spacing: .3em; }
 .hero__scroll-label { color: var(--ink); font-weight: 600; letter-spacing: .34em; }
 .hero__scroll-line {
   position: relative;
@@ -708,8 +718,6 @@ html.has-cursor .cursor { display: block; }
   transition-delay: var(--delay, 0ms);
 }
 .js [data-reveal-line].is-in { transform: none; }
-/* Buttons handle their own transforms once revealed */
-.js .hero__ctas.is-in, .js .contact__actions.is-in { transform: none; }
 
 /* =============================================================== SECTIONS */
 .section {
@@ -779,7 +787,7 @@ html.has-cursor .cursor { display: block; }
 }
 .stat:hover { background: #fff; }
 .stat__num { font-size: clamp(2.8rem, 4.6vw, 5.6rem); font-weight: 800; line-height: 1; letter-spacing: -.05em; }
-.stat__plus { font-size: clamp(1.6rem, 2.4vw, 3rem); font-weight: 700; color: var(--accent); margin-left: .05em; }
+.stat__plus { font-size: clamp(1.6rem, 2.4vw, 3rem); font-weight: 700; color: var(--accent); margin-left: .05em; letter-spacing: normal; }
 .stat__label { flex-basis: 100%; margin-top: 12px; font: 500 var(--mono-fs)/1.5 var(--font-mono); letter-spacing: .2em; text-transform: uppercase; color: var(--muted); }
 
 /* ----------------------------------------------------------------- skills */
@@ -806,7 +814,22 @@ html.has-cursor .cursor { display: block; }
 }
 .marquee span.is-outline { color: transparent; -webkit-text-stroke: 1.5px var(--ink); }
 .marquee i { font-style: normal; font-size: clamp(1.4rem, 2.6vw, 3rem); color: var(--accent); }
-.marquee:hover .marquee__track { animation-play-state: paused; }
+.marquee { position: relative; }
+.marquee:hover .marquee__track, .marquee.is-paused .marquee__track { animation-play-state: paused; }
+.marquee__toggle {
+  position: absolute; z-index: 1;
+  right: var(--pad-r); bottom: 8px;
+  padding: 6px 12px 5px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .85);
+  font: 500 10px/1 var(--font-mono);
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: #55554F;
+  transition: border-color .3s, color .3s;
+}
+.marquee__toggle:hover { border-color: var(--ink); color: var(--ink); }
 @keyframes marquee { to { transform: translateX(-50%); } }
 
 .skill-list { position: relative; z-index: 1; border-top: 1px solid var(--line); }
@@ -901,6 +924,7 @@ html.has-cursor .cursor { display: block; }
   letter-spacing: .16em;
   text-transform: uppercase;
   color: var(--ink);
+  text-wrap: balance;
 }
 .badge--accent { border-color: rgba(var(--accent-rgb), .45); background: rgba(var(--accent-rgb), .07); color: #C81E4B; }
 
@@ -928,14 +952,16 @@ html.has-cursor .cursor { display: block; }
 html.has-cursor .project-preview { display: block; }
 .project-preview__inner {
   position: absolute; inset: 0;
-  transform: translate(-50%, -50%) scale(.6) rotate(-6deg);
+  transform: translate(32px, -50%) scale(.6) rotate(-6deg);
   opacity: 0;
   border-radius: 18px;
   overflow: hidden;
   box-shadow: 0 40px 60px -30px rgba(14, 14, 14, .55);
   transition: transform .6s var(--ease-out), opacity .35s;
 }
-.project-preview.is-visible .project-preview__inner { transform: translate(-50%, -50%) scale(1) rotate(-3deg); opacity: 1; }
+.project-preview.is-visible .project-preview__inner { transform: translate(32px, -50%) scale(1) rotate(-3deg); opacity: 1; }
+.project-preview.is-left .project-preview__inner { transform: translate(calc(-100% - 32px), -50%) scale(.6) rotate(6deg); }
+.project-preview.is-left.is-visible .project-preview__inner { transform: translate(calc(-100% - 32px), -50%) scale(1) rotate(3deg); }
 .cover {
   position: absolute; inset: 0;
   display: grid; place-items: center;
@@ -976,7 +1002,7 @@ html.has-cursor .project-preview { display: block; }
 .bullets li { position: relative; padding-left: 22px; }
 .bullets li::before {
   content: ""; position: absolute; left: 0; top: .78em;
-  width: 10px; height: 1.5px; background: var(--accent);
+  width: 10px; height: 2px; background: var(--accent);
 }
 
 .extras {
@@ -1001,7 +1027,7 @@ html.has-cursor .project-preview { display: block; }
   border-color: var(--ink);
   box-shadow: 0 30px 50px -36px rgba(14, 14, 14, .45);
 }
-.extra-card__kicker { color: var(--accent); margin-bottom: clamp(8px, 1.4vw, 28px); }
+.extra-card__kicker { color: #C81E4B; margin-bottom: clamp(8px, 1.4vw, 28px); }
 .extra-card__title { color: var(--ink); font-size: clamp(1.2rem, 1.45vw, 1.8rem); font-weight: 700; line-height: 1.15; letter-spacing: -.025em; text-transform: uppercase; }
 .extra-card__org { color: var(--ink); font-weight: 500; }
 .extra-card__period { color: var(--ink); }
@@ -1016,6 +1042,7 @@ html.has-cursor .project-preview { display: block; }
   color: rgba(255, 255, 255, .7);
 }
 .extra-card--accent .extra-card__title { color: #fff; }
+.extra-card--accent .extra-card__kicker { color: var(--accent); }
 .js .extra-card--accent.is-in:hover, .extra-card--accent:hover { border-color: var(--accent); }
 
 .certs { display: grid; gap: 16px; }
@@ -1083,6 +1110,11 @@ html.has-cursor .project-preview { display: block; }
   .hero__lead { max-width: 24em; }
   .hero__portrait { left: 67%; width: min(74vw, calc(var(--hero-h) * 1.17)); }
   .hero__vertical { display: none; }
+  .chip--two { left: calc(91% - 14.5em); }
+}
+
+@media (max-width: 1260px) {
+  .hero__vertical { display: none; }
 }
 
 /* Portrait-oriented screens and phones: stacked hero */
@@ -1095,7 +1127,19 @@ html.has-cursor .project-preview { display: block; }
   }
   .hero__index { display: none; }
   .hero__status { position: relative; top: auto; right: auto; order: 0; max-width: none; padding: 0 var(--pad-r) 0 var(--pad-l); text-align: left; line-height: 1.6; font-size: 10px; letter-spacing: .2em; }
-  .hero__vertical, .hero__scroll { display: none; }
+  .hero__status { display: flex; align-items: baseline; text-wrap: balance; }
+  .hero__status .pulse-dot { flex: none; }
+  .hero__vertical, .hero__scroll-label, .hero__scroll-line { display: none; }
+  .hero__scroll {
+    position: relative; order: 2;
+    right: auto; bottom: auto;
+    align-self: flex-start;
+    margin: 18px var(--pad-r) 0 var(--pad-l);
+    padding: 0;
+    background: none;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
 
   .hero__content {
     position: relative; order: 1;
@@ -1114,7 +1158,7 @@ html.has-cursor .project-preview { display: block; }
   /* The portrait sits below the copy; it is wider than the screen so the face reads large.
      Image 1 and the Image 2 canvas are still inside the exact same box. */
   .hero__portrait {
-    position: relative; order: 2;
+    position: relative; order: 3;
     left: 50%; bottom: auto;
     width: max(150vw, 520px);
     max-width: 900px;
