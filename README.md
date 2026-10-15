@@ -1,20 +1,11 @@
 # K G Harish Patel — Portfolio
 
-Personal portfolio of **K G Harish Patel**, AI/ML Engineer (Python • Computer Vision • Generative AI). 
-
-The hero always shows a clean editorial portrait. Underneath it is a futuristic AI version of the same portrait. That second image only appears where the cursor (or finger) moves, through an organic, liquid, constantly morphing mask.
+Personal portfolio of **K G Harish Patel**, Software Engineer Intern (Python • Backend • Computer Vision & Edge AI).
 
 - No framework and no build step: plain HTML, CSS and JavaScript.
-- Works by opening `index.html` directly or on any static host, including GitHub Pages.
-- No external requests: the fonts are self-hosted.
-
-```
-Default ── clean portrait + editorial white composition
-Reveal  ── futuristic AI/robotic version of the same portrait
-Trigger ── mouse movement across the hero
-Mask    ── organic, irregular, liquid/blob-shaped reveal
-Mobile  ── finger/touch position controls the reveal
-```
+- Works on any static host. On GitHub Pages it is served from the `/Portfolio_01/` subpath, so all asset paths are relative.
+- No external requests: fonts are self-hosted, no analytics.
+- The hero portrait has an optional machine-vision overlay that appears under the cursor or finger (`assets/js/hero-reveal.js`).
 
 ## Project structure
 
@@ -24,7 +15,7 @@ Mobile  ── finger/touch position controls the reveal
 ├── assets/
 │   ├── css/style.css          # design system + layout (tokens at the top in :root)
 │   ├── js/hero-reveal.js      # the organic cursor reveal engine (canvas)
-│   ├── js/main.js             # header, menu, magnetic CTAs, cursor, scroll reveals, previews
+│   ├── js/main.js             # header, menu, mobile menu, active link
 │   ├── img/hero-default.webp  # IMAGE 1 – clean portrait (permanent base layer)
 │   ├── img/hero-reveal.webp   # IMAGE 2 – futuristic portrait (masked overlay only)
 │   ├── img/favicon.svg
@@ -56,17 +47,7 @@ npx serve .
 
 ### 1. Content
 
-All content lives in `index.html`:
-
-| What | Where |
-| --- | --- |
-| Name | `<title>`, the meta tags, `.brand__name` (header + footer), the hero image `alt` |
-| Hero | `.eyebrow` (role line), `.hero__title`, `.hero__lead`, `.hero__status` (availability badge), `.chip`s |
-| About text and stats | `#about` |
-| Skills | `#skills`: one `.skill-row` per category, plus the scrolling marquee |
-| Projects | `#projects`: one `.project` per project |
-| Experience, education, achievement, community, certifications | `#experience`: `.timeline` plus the `.extras` cards |
-| Email and profiles | the menu overlay (`.menu__foot`) and `#contact` |
+All content lives in `index.html`, one `<section>` each for hero, about, skills, projects, experience, education and contact. Design tokens are at the top of `assets/css/style.css`. `assets/js/main.js` only handles the mobile menu, active nav link and footer year.
 
 ### 2. Hero images
 

@@ -3,514 +3,291 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>K G Harish Patel — AI/ML Engineer · Computer Vision · Generative AI</title>
-  <meta name="description" content="K G Harish Patel — Computer Science Engineering undergraduate building computer vision, edge AI and generative AI systems, from PCB defect detection to GraphRAG knowledge retrieval.">
+  <title>K G Harish Patel — Software Engineer Intern · Python, Backend, Computer Vision</title>
+  <meta name="description" content="K G Harish Patel is a Computer Science undergraduate and software engineer intern working across Python backend services, computer vision, Edge AI and LLM applications. Projects include GraphRAG, PCB defect detection and a FastAPI library system.">
   <meta name="author" content="K G Harish Patel">
   <meta name="theme-color" content="#FAFAF8">
+  <link rel="canonical" href="https://harishhh-paaatel.github.io/Portfolio_01/">
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="K G Harish Patel — AI/ML Engineer">
-  <meta property="og:description" content="AI/ML Engineer • Python • Computer Vision • Generative AI">
+  <meta property="og:title" content="K G Harish Patel — Software Engineer Intern">
+  <meta property="og:description" content="Python, backend engineering, computer vision and Edge AI.">
   <meta property="og:url" content="https://harishhh-paaatel.github.io/Portfolio_01/">
   <meta property="og:image" content="https://harishhh-paaatel.github.io/Portfolio_01/assets/img/hero-default.webp">
-  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:card" content="summary">
 
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-
   <link rel="preload" href="assets/fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="assets/fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
-
-  <!-- Both hero layers are fetched up front so the reveal is instant on first hover -->
-  <link rel="preload" as="image" href="assets/img/hero-default.webp" type="image/webp">
-  <link rel="preload" as="image" href="assets/img/hero-reveal.webp" type="image/webp">
-
+  <link rel="preload" href="assets/img/hero-default.webp" as="image" type="image/webp">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- ============================== HEADER ============================== -->
   <header class="header" data-header>
-    <a class="brand" href="#top" aria-label="K G Harish Patel — home">
-      <span class="brand__line" aria-hidden="true"></span>
-      <span class="brand__name">K G Harish Patel</span>
-    </a>
-
-    <nav class="nav" aria-label="Primary">
-      <a class="nav__link" href="#about">About</a>
-      <a class="nav__link" href="#skills">Skills</a>
-      <a class="nav__link" href="#projects">Projects</a>
-      <a class="nav__link" href="#experience">Experience</a>
-      <a class="nav__link" href="#contact">Contact</a>
+    <a class="brand" href="#top">K G Harish Patel</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-toggle>Menu</button>
+    <nav class="nav" id="site-nav" aria-label="Primary" data-nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
     </nav>
-
-    <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu" data-menu-toggle>
-      <span></span><span></span><span></span>
-    </button>
   </header>
-
-  <!-- ============================== MENU OVERLAY ============================== -->
-  <div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Menu" aria-hidden="true" data-menu>
-    <div class="menu__inner">
-      <p class="mono-label"><span class="mono-label__index" aria-hidden="true">[ ✶ ]</span> Navigate</p>
-      <nav class="menu__nav" aria-label="Menu">
-        <a class="menu__link" href="#top"><span class="menu__num" aria-hidden="true">00</span>Home</a>
-        <a class="menu__link" href="#about"><span class="menu__num" aria-hidden="true">01</span>About</a>
-        <a class="menu__link" href="#skills"><span class="menu__num" aria-hidden="true">02</span>Skills</a>
-        <a class="menu__link" href="#projects"><span class="menu__num" aria-hidden="true">03</span>Projects</a>
-        <a class="menu__link" href="#experience"><span class="menu__num" aria-hidden="true">04</span>Experience</a>
-        <a class="menu__link" href="#contact"><span class="menu__num" aria-hidden="true">05</span>Contact</a>
-      </nav>
-      <div class="menu__foot">
-        <a href="mailto:kgharishpatel@gmail.com" class="menu__mail">kgharishpatel@gmail.com</a>
-        <div class="menu__socials">
-          <a href="https://github.com/harishhh-paaatel" target="_blank" rel="noopener">GitHub</a>
-          <a href="https://www.linkedin.com/in/kg-harish-patel" target="_blank" rel="noopener">LinkedIn</a>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <main id="main">
 
-    <!-- ============================== 01 · HERO ============================== -->
-    <section class="hero" id="top" data-hero aria-label="Introduction">
-
-      <!-- Oversized low-contrast background type -->
-      <div class="hero__type" aria-hidden="true" data-hero-type>
-        <span class="hero__word hero__word--create">Create</span>
-        <span class="hero__word hero__word--outline">Systems</span>
-        <span class="hero__word hero__word--notjust">Not just</span>
-        <span class="hero__word hero__word--code">Code</span>
+    <!-- Hero -->
+    <section class="hero" id="top" data-hero aria-labelledby="hero-title">
+      <div class="hero__text">
+        <p class="eyebrow">Software Engineer Intern · Python · Backend · Computer Vision &amp; Edge AI</p>
+        <h1 class="hero__title" id="hero-title">K G Harish Patel</h1>
+        <p class="hero__lead">
+          I'm Harish, a computer science engineering student working across backend development, computer vision,
+          and applied AI. I build Python systems, from REST APIs and knowledge retrieval pipelines to PCB inspection
+          tools and edge inference experiments.
+        </p>
+        <p class="hero__meta">B.E. Computer Science &amp; Engineering, Maharaja Institute of Technology, Mysore · Expected 2027</p>
+        <div class="hero__links">
+          <a class="btn btn--primary" href="#projects">View projects</a>
+          <a class="btn" href="https://github.com/harishhh-paaatel" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn" href="https://www.linkedin.com/in/kg-harish-patel" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn" href="#contact">Contact</a>
+        </div>
       </div>
 
-      <!-- Portrait: Image 1 is the permanent base layer, Image 2 is drawn only inside the organic mask -->
-      <div class="hero__portrait">
-        <div class="hero__glow" aria-hidden="true"></div>
+      <figure class="hero__portrait">
         <div class="hero__stage" data-reveal-stage>
           <img class="hero__img" src="assets/img/hero-default.webp" width="1400" height="1157"
                alt="Portrait of K G Harish Patel" fetchpriority="high" decoding="async" draggable="false">
           <canvas class="hero__reveal" data-reveal-canvas data-src="assets/img/hero-reveal.webp" aria-hidden="true"></canvas>
         </div>
-
-        <div class="hero__chips" aria-hidden="true">
-          <span class="chip chip--one"><span class="chip__code">&lt;/&gt;</span> Python <i>·</i> PyTorch</span>
-          <span class="chip chip--two"><span class="chip__dot"></span> GenAI / RAG</span>
-          <span class="chip chip--three"><span class="chip__plus">+</span> Edge AI</span>
-        </div>
-      </div>
-
-      <!-- Meta labels -->
-      <p class="hero__index mono-label" data-reveal-up><span class="mono-label__index" aria-hidden="true">[ 01 ]</span> Index / Hero</p>
-      <p class="hero__status mono-label" data-reveal-up><span class="pulse-dot" aria-hidden="true"></span> Open to AI/ML &amp; Software Engineering Internships</p>
-      <p class="hero__vertical mono-label" aria-hidden="true">Portfolio — © <span data-year>2026</span></p>
-      <div class="hero__scroll mono-label" aria-hidden="true">
-        <span class="hero__hint"><span class="only-hover">( Hover to discover )</span><span class="only-touch">( Touch to discover )</span></span>
-        <span class="hero__scroll-label">Scroll</span>
-        <span class="hero__scroll-line"></span>
-      </div>
-
-      <!-- Main message -->
-      <div class="hero__content">
-        <p class="eyebrow" data-reveal-up>
-          <span class="eyebrow__line" aria-hidden="true"></span>
-          <span class="eyebrow__text">
-            <span class="eyebrow__group">AI/ML Engineer <span class="eyebrow__dot">•</span> Python <span class="eyebrow__dot">•</span></span>
-            <span class="eyebrow__group">Computer Vision <span class="eyebrow__dot">•</span> Generative AI</span>
-          </span>
-        </p>
-
-        <h1 class="hero__title">
-          <span class="visually-hidden">K G Harish Patel — </span>
-          <span class="line"><span data-reveal-line>I turn real-world</span></span>
-          <span class="line"><span data-reveal-line>problems into</span></span>
-          <span class="line line--accent"><span data-reveal-line>ML systems.</span></span>
-        </h1>
-
-        <p class="hero__lead" data-reveal-up>
-          Computer Science undergraduate building computer vision, edge AI and generative AI systems —
-          from PCB defect detection to GraphRAG-based knowledge retrieval.
-        </p>
-
-        <div class="hero__ctas" data-reveal-up>
-          <a class="btn btn--primary" href="#contact" data-magnetic>
-            <span class="btn__label">Let's connect</span>
-            <span class="btn__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
-          </a>
-          <a class="btn btn--ghost" href="#projects" data-magnetic>
-            <span class="btn__label">View my work</span>
-          </a>
-        </div>
-      </div>
+        <figcaption class="hero__caption"><span class="only-hover">Move the cursor over the portrait for a machine-vision view.</span><span class="only-touch">Touch the portrait for a machine-vision view.</span></figcaption>
+      </figure>
     </section>
 
-    <!-- ============================== 02 · ABOUT ============================== -->
-    <section class="section about" id="about" aria-labelledby="about-title">
-      <span class="section__ghost" aria-hidden="true">About</span>
+    <!-- About -->
+    <section class="section" id="about" aria-labelledby="about-title">
       <div class="section__head">
-        <p class="mono-label" data-reveal-up><span class="mono-label__index" aria-hidden="true">[ 02 ]</span> About / Story</p>
-        <h2 class="section__title" id="about-title" data-reveal-up>
-          Engineer by default.<br>
-          <span class="text-accent">AI builder</span> underneath.
-        </h2>
+        <p class="section__kicker">About</p>
+        <h2 class="section__title" id="about-title">Software engineering with applied AI</h2>
       </div>
-
-      <div class="about__grid">
-        <div class="about__text" data-reveal-up>
-          <p class="about__lead">
-            Computer Science Engineering undergraduate with a strong focus on Machine Learning, Computer Vision,
-            Generative AI and software development.
-          </p>
-          <p>
-            I enjoy turning real-world engineering problems into practical ML systems — from PCB defect detection
-            and edge inference to GraphRAG-based knowledge retrieval.
-          </p>
-          <p>
-            I work primarily with Python, and have hands-on experience building ML pipelines, REST APIs, full-stack
-            applications and AI-powered systems. I'm particularly interested in taking ML models from experimentation
-            and evaluation toward reliable, production-ready systems.
-          </p>
-        </div>
-
-        <ul class="stats" data-reveal-up>
-          <li class="stat">
-            <span class="stat__num" data-count="2">2</span>
-            <span class="stat__label">Internships in AI &amp; Edge AI</span>
-          </li>
-          <li class="stat">
-            <span class="stat__num" data-count="4">4</span>
-            <span class="stat__label">Featured ML &amp; software projects</span>
-          </li>
-          <li class="stat">
-            <span class="stat__num" data-count="90">90</span>
-            <span class="stat__label">Tutorials on Coding Kannadiga</span>
-          </li>
-          <li class="stat">
-            <span class="stat__num">2<span class="stat__plus">nd</span></span>
-            <span class="stat__label">Prize · Innovotsava 2026 Drone Fair</span>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- ============================== 03 · SKILLS ============================== -->
-    <section class="section skills" id="skills" aria-labelledby="skills-title">
-      <div class="marquee">
-        <button class="marquee__toggle" type="button" aria-pressed="false" data-marquee-toggle>Pause motion</button>
-        <div class="marquee__track" aria-hidden="true">
-          <span>Python</span><i>✶</i><span class="is-outline">PyTorch</span><i>✶</i><span>YOLOv8</span><i>✶</i><span class="is-outline">OpenCV</span><i>✶</i><span>GraphRAG</span><i>✶</i><span class="is-outline">FastAPI</span><i>✶</i><span>Edge AI</span><i>✶</i><span class="is-outline">LLMs</span><i>✶</i>
-          <span>Python</span><i>✶</i><span class="is-outline">PyTorch</span><i>✶</i><span>YOLOv8</span><i>✶</i><span class="is-outline">OpenCV</span><i>✶</i><span>GraphRAG</span><i>✶</i><span class="is-outline">FastAPI</span><i>✶</i><span>Edge AI</span><i>✶</i><span class="is-outline">LLMs</span><i>✶</i>
-        </div>
-      </div>
-
-      <div class="section__head">
-        <p class="mono-label" data-reveal-up><span class="mono-label__index" aria-hidden="true">[ 03 ]</span> Skills / Stack</p>
-        <h2 class="section__title" id="skills-title" data-reveal-up>The stack behind<br>my <span class="text-accent">ML systems.</span></h2>
-      </div>
-
-      <ol class="skill-list">
-        <li class="skill-row" data-reveal-up>
-          <span class="skill-row__num">01</span>
-          <h3 class="skill-row__title">Programming</h3>
-          <ul class="tags">
-            <li>Python</li><li>JavaScript</li><li>TypeScript</li><li>C</li><li>SQL</li>
-          </ul>
-        </li>
-        <li class="skill-row" data-reveal-up>
-          <span class="skill-row__num">02</span>
-          <h3 class="skill-row__title">Machine Learning</h3>
-          <ul class="tags">
-            <li>Scikit-learn</li><li>PyTorch</li><li>TensorFlow Lite</li><li>Pandas</li><li>NumPy</li>
-            <li>Classification</li><li>Anomaly Detection</li><li>Feature Engineering</li><li>Transfer Learning</li>
-            <li>Model Fine-Tuning</li><li>Model Evaluation</li><li>Error Analysis</li>
-          </ul>
-        </li>
-        <li class="skill-row" data-reveal-up>
-          <span class="skill-row__num">03</span>
-          <h3 class="skill-row__title">Computer Vision</h3>
-          <ul class="tags">
-            <li>YOLOv8</li><li>MobileNet-SSD</li><li>OpenCV</li><li>Image Processing</li><li>Object Detection</li>
-            <li>Structure from Motion</li><li>3D Reconstruction</li>
-          </ul>
-        </li>
-        <li class="skill-row skill-row--accent" data-reveal-up>
-          <span class="skill-row__num">04</span>
-          <h3 class="skill-row__title">Generative AI &amp;&nbsp;NLP</h3>
-          <ul class="tags">
-            <li>LLMs</li><li>RAG</li><li>GraphRAG</li><li>Knowledge Graphs</li><li>Entity &amp; Relation Extraction</li><li>NetworkX</li>
-          </ul>
-        </li>
-        <li class="skill-row" data-reveal-up>
-          <span class="skill-row__num">05</span>
-          <h3 class="skill-row__title">Backend &amp; Software Engineering</h3>
-          <ul class="tags">
-            <li>FastAPI</li><li>REST APIs</li><li>SQLAlchemy</li><li>PostgreSQL</li><li>SQLite</li>
-            <li>JWT Authentication</li><li>Role-Based Access Control</li><li>JSON APIs</li>
-          </ul>
-        </li>
-        <li class="skill-row" data-reveal-up>
-          <span class="skill-row__num">06</span>
-          <h3 class="skill-row__title">Edge AI &amp; Systems</h3>
-          <ul class="tags">
-            <li>Edge Inference</li><li>Latency Profiling</li><li>FPS Profiling</li><li>SRAM/Flash Profiling</li>
-            <li>Energy Profiling</li><li>TensorFlow Lite</li>
-          </ul>
-        </li>
-        <li class="skill-row" data-reveal-up>
-          <span class="skill-row__num">07</span>
-          <h3 class="skill-row__title">Tools &amp; Development</h3>
-          <ul class="tags">
-            <li>Git</li><li>GitHub</li><li>Docker</li><li>Linux</li><li>VS Code</li><li>Jupyter</li><li>Agile</li>
-            <li>Testing &amp; Debugging</li><li>Code Review</li><li>Technical Documentation</li>
-          </ul>
-        </li>
-      </ol>
-    </section>
-
-    <!-- ============================== 04 · PROJECTS ============================== -->
-    <section class="section projects" id="projects" aria-labelledby="projects-title">
-      <span class="section__ghost" aria-hidden="true">Work</span>
-      <div class="section__head section__head--row">
-        <div>
-          <p class="mono-label" data-reveal-up><span class="mono-label__index" aria-hidden="true">[ 04 ]</span> Selected / Work</p>
-          <h2 class="section__title" id="projects-title" data-reveal-up>Selected projects.</h2>
-        </div>
-        <p class="section__aside" data-reveal-up>
-          Four projects across GraphRAG, computer vision, edge AI and full-stack engineering —
-          each one built as a working system, not just an experiment.
+      <div class="prose">
+        <p>
+          I'm an undergraduate at Maharaja Institute of Technology, Mysore, studying Computer Science and Engineering
+          (September 2023 to August 2027, expected). My work sits where backend software meets machine learning:
+          FastAPI services with defined JSON contracts, ML pipelines, computer vision tools and LLM-based applications.
+        </p>
+        <p>
+          Backend engineering, computer vision and Edge AI feel like one skill set to me. A detector is only useful if
+          it is evaluated honestly and can run within its latency and memory limits, and a model behind an API needs the
+          same testing, logging and debugging discipline as any other service.
+        </p>
+        <p>
+          When I build something, I try to compare it against a baseline, look at where it fails (per-class errors,
+          false positives), and measure the cost of running it. I'm currently interning in Edge AI and machine vision,
+          and I'm looking for software engineering internships where I can keep learning on real systems.
         </p>
       </div>
-
-      <ol class="project-list" data-projects>
-        <li class="project" data-reveal-up>
-          <article class="project__row" data-cover="1">
-            <span class="project__num">01</span>
-            <div class="project__main">
-              <h3 class="project__title">GraphRAG Knowledge System</h3>
-              <p class="project__tagline">An LLM-powered knowledge retrieval system that combines knowledge graphs with retrieval-augmented generation.</p>
-              <p class="project__desc">
-                Built a pipeline that extracts entities and relationships from unstructured documents, constructs a
-                NetworkX knowledge graph, and uses graph-based retrieval to answer questions through an LLM. The system
-                was benchmarked against a traditional chunk-based RAG baseline to compare retrieval quality, exposed
-                through a FastAPI REST service and containerized with Docker for reproducibility.
-              </p>
-              <ul class="tags"><li>Python</li><li>LLMs</li><li>GraphRAG</li><li>NetworkX</li><li>FastAPI</li><li>Docker</li></ul>
-            </div>
-            <div class="project__meta">
-              <span class="project__year">2026</span>
-            </div>
-          </article>
-        </li>
-
-        <li class="project" data-reveal-up>
-          <article class="project__row" data-cover="2">
-            <span class="project__num">02</span>
-            <div class="project__main">
-              <h3 class="project__title">PCB Defect Detection &amp; Edge&nbsp;AI</h3>
-              <p class="project__tagline">Computer vision system for detecting manufacturing defects on PCBs using deep learning.</p>
-              <p class="project__desc">
-                At ProEmbSys, I translated PCB inspection requirements into an object-detection problem and worked with
-                YOLOv8 and MobileNet-SSD to detect four defect categories. I also worked on real-time Python/OpenCV
-                pipelines and optimized edge inference while monitoring latency, FPS, SRAM/Flash usage and energy consumption.
-              </p>
-              <ul class="project__points" aria-label="Defect categories">
-                <li>Short circuits</li><li>Open traces</li><li>Missing solder</li><li>Misalignment</li>
-              </ul>
-              <ul class="tags"><li>Python</li><li>YOLOv8</li><li>MobileNet-SSD</li><li>OpenCV</li><li>TensorFlow Lite</li><li>Edge AI</li></ul>
-            </div>
-            <div class="project__meta">
-              <span class="project__year">2026</span>
-              <span class="badge">Industry project</span>
-            </div>
-          </article>
-        </li>
-
-        <li class="project" data-reveal-up>
-          <article class="project__row" data-cover="3">
-            <span class="project__num">03</span>
-            <div class="project__main">
-              <h3 class="project__title">Drone Navigation &amp; 3D Reconstruction</h3>
-              <p class="project__tagline">Controller-based drone simulation with automated image capture and 3D scene reconstruction.</p>
-              <p class="project__desc">
-                Built a drone navigation simulation using AirSim and Unreal Engine, generated flight-path data, and created
-                a Python/OpenCV/NumPy pipeline that captured RGB images together with camera-pose information. The captured
-                sequences were then used for Structure from Motion-based 3D reconstruction.
-              </p>
-              <ul class="tags"><li>Python</li><li>AirSim</li><li>Unreal Engine</li><li>OpenCV</li><li>NumPy</li><li>Structure from Motion</li></ul>
-            </div>
-            <div class="project__meta">
-              <span class="project__year">2026</span>
-              <span class="badge badge--accent">2nd Prize — Innovotsava 2026 Drone Fair</span>
-            </div>
-          </article>
-        </li>
-
-        <li class="project" data-reveal-up>
-          <article class="project__row" data-cover="4">
-            <span class="project__num">04</span>
-            <div class="project__main">
-              <h3 class="project__title">Library Management System</h3>
-              <p class="project__tagline">Full-stack library management platform with authentication, automation and analytics.</p>
-              <p class="project__desc">
-                Built a full-stack system with FastAPI REST APIs, a JavaScript UI and SQLAlchemy, covering books, users,
-                loans and reservations.
-              </p>
-              <ul class="project__points" aria-label="Features">
-                <li>Role-based JWT authentication</li><li>Audit logging</li><li>Loan tracking</li>
-                <li>Automated fine calculation</li><li>Real-time book availability</li><li>Smart search</li>
-                <li>Analytics dashboard</li><li>Email notifications</li>
-              </ul>
-              <ul class="tags"><li>Python</li><li>FastAPI</li><li>SQLAlchemy</li><li>SQLite</li><li>JavaScript</li><li>JWT</li></ul>
-            </div>
-            <div class="project__meta">
-              <span class="project__year">2025</span>
-            </div>
-          </article>
-        </li>
-      </ol>
-
-      <a class="more-link" href="https://github.com/harishhh-paaatel" target="_blank" rel="noopener" data-reveal-up>
-        More code on GitHub <span aria-hidden="true">↗</span>
-      </a>
-
-      <!-- Floating cover that follows the cursor over the project list -->
-      <div class="project-preview" aria-hidden="true" data-project-preview>
-        <div class="project-preview__inner">
-          <div class="cover cover--1"><span>GR</span></div>
-          <div class="cover cover--2"><span>PCB</span></div>
-          <div class="cover cover--3"><span>3D</span></div>
-          <div class="cover cover--4"><span>LMS</span></div>
-        </div>
-      </div>
     </section>
 
-    <!-- ============================== 05 · EXPERIENCE ============================== -->
-    <section class="section experience" id="experience" aria-labelledby="experience-title">
+    <!-- Skills -->
+    <section class="section" id="skills" aria-labelledby="skills-title">
       <div class="section__head">
-        <p class="mono-label" data-reveal-up><span class="mono-label__index" aria-hidden="true">[ 05 ]</span> Experience / Path</p>
-        <h2 class="section__title" id="experience-title" data-reveal-up>Where I've been building.</h2>
+        <p class="section__kicker">Technical skills</p>
+        <h2 class="section__title" id="skills-title">What I work with</h2>
+      </div>
+      <dl class="skills">
+        <div class="skills__row">
+          <dt>Programming</dt>
+          <dd>Python, C, JavaScript, TypeScript, SQL, HTML, CSS</dd>
+        </div>
+        <div class="skills__row">
+          <dt>Backend &amp; databases</dt>
+          <dd>FastAPI, REST APIs, OpenAPI/Swagger, SQLAlchemy, PostgreSQL, SQLite, JSON, JWT authentication, role-based access control, relational data modelling</dd>
+        </div>
+        <div class="skills__row">
+          <dt>AI, ML &amp; LLMs</dt>
+          <dd>PyTorch, Scikit-learn, Pandas, NumPy, LLMs, prompt engineering, RAG, GraphRAG, LoRA/QLoRA, model evaluation</dd>
+        </div>
+        <div class="skills__row">
+          <dt>Computer vision &amp; Edge AI</dt>
+          <dd>OpenCV, YOLOv8, MobileNet-SSD, Structure from Motion, AirSim, TensorFlow Lite, anomaly detection, latency/FPS profiling, SRAM/Flash/energy profiling</dd>
+        </div>
+        <div class="skills__row">
+          <dt>Engineering practice</dt>
+          <dd>Git, GitHub, Docker, Linux, Jenkins/CI/CD, testing, debugging, logging, code review, Agile, root-cause analysis</dd>
+        </div>
+      </dl>
+    </section>
+
+    <!-- Projects -->
+    <section class="section" id="projects" aria-labelledby="projects-title">
+      <div class="section__head">
+        <p class="section__kicker">Selected projects</p>
+        <h2 class="section__title" id="projects-title">Things I've built</h2>
       </div>
 
+      <div class="projects">
+        <article class="project">
+          <header class="project__head">
+            <h3 class="project__title">GraphRAG Knowledge System</h3>
+          </header>
+          <p class="project__problem">Plain chunk-based RAG loses the relationships between facts spread across documents. This project tests whether a knowledge graph retrieves better.</p>
+          <ul class="project__points">
+            <li>Extracts entities and relationships from unstructured documents and builds a knowledge graph with NetworkX.</li>
+            <li>Serves retrieval and question answering through a FastAPI REST service with defined JSON contracts.</li>
+            <li>Compared against a chunk-based RAG baseline.</li>
+            <li>Packaged with Docker so it can be reproduced.</li>
+          </ul>
+          <ul class="tags" aria-label="Technologies"><li>Python</li><li>FastAPI</li><li>LLMs</li><li>NetworkX</li><li>Docker</li></ul>
+        </article>
+
+        <article class="project">
+          <header class="project__head">
+            <h3 class="project__title">PCB Defect Detection &amp; Edge AI</h3>
+            <p class="project__label">Internship work at ProEmbSys Technologies</p>
+          </header>
+          <p class="project__problem">Inspecting boards by eye is slow and inconsistent. The goal was a detector for four defect classes that can also run on edge hardware.</p>
+          <ul class="project__points">
+            <li>Python/OpenCV tool detecting shorts, open traces, missing solder and misalignment.</li>
+            <li>Transfer learning with YOLOv8 and MobileNet-SSD, evaluated with precision, recall and mAP@0.5.</li>
+            <li>Per-class root-cause analysis of false positives.</li>
+            <li>Edge inference profiled for latency, FPS, SRAM/Flash usage and energy consumption (TensorFlow Lite).</li>
+          </ul>
+          <ul class="tags" aria-label="Technologies"><li>Python</li><li>OpenCV</li><li>YOLOv8</li><li>MobileNet-SSD</li><li>TensorFlow Lite</li></ul>
+        </article>
+
+        <article class="project">
+          <header class="project__head">
+            <h3 class="project__title">Drone Navigation &amp; 3D Reconstruction</h3>
+            <p class="project__label project__label--award">2nd prize, Innovotsava 2026 Drone Fair</p>
+          </header>
+          <p class="project__problem">A simulated drone flies a scene, captures images with known camera poses, and those images are turned back into a 3D model.</p>
+          <ul class="project__points">
+            <li>Controller-based drone navigation in AirSim on Unreal Engine.</li>
+            <li>Automated image capture alongside camera-pose information.</li>
+            <li>3D scene reconstruction with Structure from Motion.</li>
+          </ul>
+          <ul class="tags" aria-label="Technologies"><li>Python</li><li>AirSim</li><li>Unreal Engine</li><li>OpenCV</li><li>NumPy</li></ul>
+        </article>
+
+        <article class="project">
+          <header class="project__head">
+            <h3 class="project__title">LibCheck — Library Management System</h3>
+          </header>
+          <p class="project__problem">A three-tier application for running a library: a JavaScript interface, a FastAPI backend and a SQLite database.</p>
+          <ul class="project__points">
+            <li>Book and loan management, availability tracking and automated fines.</li>
+            <li>JWT authentication with role-based access control, and audit logging.</li>
+            <li>Smart search, analytics and email notifications.</li>
+          </ul>
+          <ul class="tags" aria-label="Technologies"><li>Python</li><li>FastAPI</li><li>SQLAlchemy</li><li>SQLite</li><li>JavaScript</li></ul>
+        </article>
+      </div>
+
+      <article class="project project--minor">
+        <header class="project__head">
+          <h3 class="project__title">Additional project: LoRA/QLoRA LLM fine-tuning</h3>
+        </header>
+        <p class="project__problem">Parameter-efficient fine-tuning of an LLM, with evaluation against the base model and a look at GPU memory and compute trade-offs.</p>
+        <ul class="tags" aria-label="Technologies"><li>Python</li><li>PyTorch</li><li>LoRA/QLoRA</li></ul>
+      </article>
+
+      <p class="note">Source code for these projects is on <a href="https://github.com/harishhh-paaatel" target="_blank" rel="noopener">my GitHub profile</a> where it is public. The PCB work was done during my internship and is described at a high level only.</p>
+    </section>
+
+    <!-- Experience -->
+    <section class="section" id="experience" aria-labelledby="experience-title">
+      <div class="section__head">
+        <p class="section__kicker">Experience</p>
+        <h2 class="section__title" id="experience-title">Internships</h2>
+      </div>
       <ol class="timeline">
-        <li class="timeline__item" data-reveal-up>
-          <span class="timeline__period mono-label">Sep 2026 — Present</span>
-          <div class="timeline__body">
-            <h3 class="timeline__role">Project Intern — Edge&nbsp;AI &amp; Machine&nbsp;Vision</h3>
-            <p class="timeline__org">ProEmbSys Technologies Pvt. Ltd. · Bengaluru</p>
-            <p>Working on applied Computer Vision and Edge AI problems for engineering and manufacturing applications.</p>
+        <li class="timeline__item">
+          <p class="timeline__period">Sep 2026 – Present</p>
+          <div>
+            <h3 class="timeline__role">Project Intern, Edge AI &amp; Machine Vision</h3>
+            <p class="timeline__org">ProEmbSys Technologies Pvt. Ltd., Bengaluru</p>
             <ul class="bullets">
-              <li>Fine-tuning YOLOv8 and MobileNet-SSD for PCB defect detection</li>
-              <li>Detecting four PCB defect classes</li>
-              <li>Building Python/OpenCV real-time inspection pipelines</li>
-              <li>Performing model evaluation and per-class error analysis</li>
-              <li>Optimizing inference for edge hardware</li>
-              <li>Profiling latency, FPS, SRAM/Flash and energy consumption</li>
+              <li>Developed a Python/OpenCV tool for detecting four PCB defect classes: shorts, open traces, missing solder and misalignment.</li>
+              <li>Worked with YOLOv8 and MobileNet-SSD using transfer learning.</li>
+              <li>Investigated false positives through per-class root-cause analysis.</li>
+              <li>Evaluated models using precision, recall and mAP@0.5.</li>
+              <li>Profiled edge inference for latency, FPS, SRAM/Flash usage and energy consumption.</li>
             </ul>
-            <ul class="tags"><li>YOLOv8</li><li>MobileNet-SSD</li><li>OpenCV</li><li>Edge AI</li></ul>
           </div>
         </li>
-        <li class="timeline__item" data-reveal-up>
-          <span class="timeline__period mono-label">Sep 2024 — Dec 2024</span>
-          <div class="timeline__body">
+        <li class="timeline__item">
+          <p class="timeline__period">Sep 2024 – Dec 2024</p>
+          <div>
             <h3 class="timeline__role">Artificial Intelligence Intern</h3>
-            <p class="timeline__org">Tech Mindsparc Innovations Pvt. Ltd. · Remote</p>
+            <p class="timeline__org">Tech Mindsparc Innovations Pvt. Ltd., Remote</p>
             <ul class="bullets">
-              <li>Developed supervised classification and pattern-recognition models</li>
-              <li>Used Scikit-learn, Pandas and NumPy</li>
-              <li>Worked on preprocessing and feature extraction</li>
-              <li>Conducted structured model experiments</li>
-              <li>Evaluated changes using defined metrics</li>
-              <li>Incorporated mentor feedback through iterative development</li>
+              <li>Built supervised classification models using Python, Scikit-learn, Pandas and NumPy.</li>
+              <li>Worked on data preprocessing, feature extraction, model testing and evaluation.</li>
+              <li>Improved models against a baseline using defined evaluation metrics.</li>
+              <li>Worked independently in a remote Agile environment and incorporated mentor feedback.</li>
             </ul>
-            <ul class="tags"><li>Scikit-learn</li><li>Pandas</li><li>NumPy</li></ul>
           </div>
         </li>
       </ol>
+    </section>
 
-      <div class="extras">
-        <article class="extra-card" data-reveal-up>
-          <p class="extra-card__kicker mono-label">Education</p>
-          <h3 class="extra-card__title">B.E. — Computer Science &amp; Engineering</h3>
-          <p class="extra-card__org">Maharaja Institute of Technology, Mysore</p>
-          <p class="extra-card__period mono-label">Sep 2023 — Aug 2027</p>
-          <p class="extra-card__sub">Relevant coursework</p>
-          <ul class="tags">
-            <li>Machine Learning</li><li>Artificial Intelligence</li><li>Data Structures &amp; Algorithms</li>
-            <li>Object-Oriented Programming</li><li>Operating Systems</li><li>Computer Architecture</li><li>DBMS</li><li>SQL</li>
-          </ul>
+    <!-- Education, achievements, community -->
+    <section class="section" id="education" aria-labelledby="education-title">
+      <div class="section__head">
+        <p class="section__kicker">Education &amp; community</p>
+        <h2 class="section__title" id="education-title">Education, achievements and community</h2>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <h3 class="card__title">B.E. in Computer Science &amp; Engineering</h3>
+          <p class="card__sub">Maharaja Institute of Technology, Mysore</p>
+          <p class="card__period">September 2023 – August 2027 (expected)</p>
+          <p>Coursework: Data Structures and Algorithms, OOP, Operating Systems, DBMS, Computer Architecture, Machine Learning.</p>
         </article>
-
-        <article class="extra-card extra-card--accent" data-reveal-up>
-          <p class="extra-card__kicker mono-label">Achievement</p>
-          <h3 class="extra-card__title"><span class="text-accent">2nd Prize</span> — Innovotsava 2026 Drone Fair</h3>
-          <p>Awarded for the Drone Navigation &amp; 3D Reconstruction project, evaluated on innovation and technical problem-solving.</p>
+        <article class="card">
+          <h3 class="card__title">Second prize, Innovotsava 2026 Drone Fair</h3>
+          <p>Awarded for the Drone Navigation &amp; 3D Reconstruction project.</p>
         </article>
-
-        <article class="extra-card" data-reveal-up>
-          <p class="extra-card__kicker mono-label">Leadership / Community</p>
-          <h3 class="extra-card__title">Co-Founder &amp; Content Lead — Coding Kannadiga</h3>
-          <p class="extra-card__period mono-label">Jul 2025 — Present</p>
-          <p>Created educational content covering Python, Java, DSA and AI, and built a YouTube channel with 90 tutorials and 273 subscribers.</p>
+        <article class="card">
+          <h3 class="card__title">Co-Founder &amp; Content Lead, Coding Kannadiga</h3>
+          <p class="card__period">July 2025 – Present</p>
+          <p>Created 90 programming tutorials covering Python, Java, DSA and AI. The YouTube channel has 273 subscribers.</p>
         </article>
-
-        <article class="extra-card" data-reveal-up>
-          <h3 class="extra-card__kicker mono-label">Certifications</h3>
-          <ul class="certs">
-            <li>
-              <span class="certs__name">Software Engineering Job Simulation</span>
-              <span class="certs__by">JPMorgan Chase &amp; Co. / Forage · 2025</span>
-            </li>
-            <li>
-              <span class="certs__name">AI Aware</span>
-              <span class="certs__by">Intel × Digital India · 2025</span>
-            </li>
+        <article class="card">
+          <h3 class="card__title">Certifications</h3>
+          <ul class="bullets">
+            <li>JPMorgan Chase Software Engineering Job Simulation, Forage, 2025</li>
+            <li>AI Aware, Intel × Digital India, 2025</li>
+            <li>Deloitte Cyber Job Simulation, Forage, 2025</li>
           </ul>
         </article>
       </div>
     </section>
 
-    <!-- ============================== 06 · CONTACT ============================== -->
-    <section class="contact" id="contact" aria-labelledby="contact-title">
-      <div class="contact__inner">
-        <p class="mono-label mono-label--light" data-reveal-up><span class="mono-label__index" aria-hidden="true">[ 06 ]</span> Contact / Hello</p>
-        <h2 class="contact__title" id="contact-title">
-          <span class="line"><span data-reveal-line>Have a problem</span></span>
-          <span class="line"><span data-reveal-line>worth solving?</span></span>
-          <span class="line line--accent"><span data-reveal-line>Let's talk.</span></span>
-        </h2>
-
-        <div class="contact__actions" data-reveal-up>
-          <a class="btn btn--primary btn--on-dark" href="mailto:kgharishpatel@gmail.com" data-magnetic>
-            <span class="btn__label">kgharishpatel@gmail.com</span>
-            <span class="btn__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
-          </a>
-          <a class="btn btn--ghost btn--on-dark" href="#top" data-magnetic><span class="btn__label">Back to top</span></a>
-        </div>
-
-        <ul class="socials" data-reveal-up>
-          <li><a href="https://github.com/harishhh-paaatel" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a></li>
-          <li><a href="https://www.linkedin.com/in/kg-harish-patel" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span></a></li>
-        </ul>
+    <!-- Contact -->
+    <section class="section section--contact" id="contact" aria-labelledby="contact-title">
+      <div class="section__head">
+        <p class="section__kicker">Contact</p>
+        <h2 class="section__title" id="contact-title">Get in touch</h2>
       </div>
-
-      <footer class="footer">
-        <span class="brand brand--light"><span class="brand__line" aria-hidden="true"></span><span class="brand__name">K G Harish Patel</span></span>
-        <span class="footer__meta mono-label mono-label--light">AI/ML • Computer Vision • Generative&nbsp;AI</span>
-        <span class="footer__meta mono-label mono-label--light">© <span data-year>2026</span> — All rights reserved</span>
-      </footer>
+      <p class="prose">I'm looking for software engineering internship opportunities. Email is the quickest way to reach me.</p>
+      <ul class="contact-list">
+        <li><span>Email</span> <a href="mailto:kgharishpatel@gmail.com">kgharishpatel@gmail.com</a></li>
+        <li><span>GitHub</span> <a href="https://github.com/harishhh-paaatel" target="_blank" rel="noopener">github.com/harishhh-paaatel</a></li>
+        <li><span>LinkedIn</span> <a href="https://www.linkedin.com/in/kg-harish-patel" target="_blank" rel="noopener">linkedin.com/in/kg-harish-patel</a></li>
+      </ul>
     </section>
   </main>
 
-  <!-- Small, refined cursor indicator (fine pointers only) -->
-  <div class="cursor" aria-hidden="true" data-cursor>
-    <span class="cursor__dot"></span>
-    <span class="cursor__label">Reveal</span>
-  </div>
+  <footer class="footer">
+    <p>© <span data-year>2026</span> K G Harish Patel</p>
+    <a href="#top">Back to top</a>
+  </footer>
 
   <script src="assets/js/hero-reveal.js" defer></script>
   <script src="assets/js/main.js" defer></script>
