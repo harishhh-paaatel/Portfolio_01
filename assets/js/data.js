@@ -24,6 +24,21 @@ window.PORTFOLIO = {
     { group: 'Research methods', items: ['Experimental design', 'Baseline comparisons', 'Trade-off studies', 'Precision / recall / mAP evaluation', 'Dataset validation', 'Error analysis'] }
   ],
 
+  /* Research card. Every line is backed by a project or role elsewhere in this file. */
+  research: {
+    blurb: 'I turn open-ended problems into measurable questions: a controlled baseline first, then one change at a time, with trade-offs documented.',
+    areas: [
+      { name: 'AI & Machine Learning', note: 'Supervised classification built end to end, with a metric-based gate that rejected any change that regressed the model.', where: 'AI Intern, Tech Mindsparc' },
+      { name: 'Large Language Models', note: 'Graph-based retrieval benchmarked against a chunk-based RAG baseline, verifying LLM output instead of trusting it.', projects: ['graphrag'] },
+      { name: 'LLM Fine-Tuning', note: 'LoRA versus QLoRA, comparing GPU memory, compute and benchmark results against the pre-fine-tuning baseline.', projects: ['lora'] },
+      { name: 'Agentic AI', note: 'A planned DevOps automation system built around specialised AI agents.', projects: ['autoops'] },
+      { name: 'Computer Vision', note: 'Defect detection with YOLOv8 and MobileNet-SSD, and Structure-from-Motion reconstruction from posed images.', projects: ['pcb-defect', 'drone'] },
+      { name: 'Edge AI', note: 'Latency, FPS, SRAM/Flash footprint and energy profiled on constrained hardware, with accuracy-efficiency trade-offs documented.', projects: ['pcb-defect'] }
+    ],
+    projects: ['lora', 'graphrag', 'drone', 'pcb-defect', 'wan-video'],
+    upcoming: [{ title: 'Agentic AI for infrastructure operations', note: 'AutoOps AI: specialised AI agents automating DevOps work. Planned, not yet built.' }]
+  },
+
   /* The four doors. Order here is the order on the wall. */
   categories: [
     { id: 'software', plate: 'Software & Web Development', short: 'Software & Web', tone: 'terracotta',

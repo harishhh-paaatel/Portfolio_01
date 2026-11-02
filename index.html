@@ -98,8 +98,12 @@
             <span class="hero__am">I work on</span>
           </h1>
           <div class="flip rv" data-flip aria-live="off">
-            <i class="flip__rings" aria-hidden="true"></i>
-            <div class="flip__face" data-flip-face></div>
+            <div class="flip__board" aria-hidden="true"></div>
+            <div class="flip__stack" aria-hidden="true">
+              <div class="flip__page flip__page--under" data-under><span class="flip__txt"></span></div>
+              <div class="flip__page flip__page--top" data-top><span class="flip__txt"></span><i class="flip__shade"></i></div>
+            </div>
+            <div class="flip__coils" data-coils aria-hidden="true"></div>
             <p class="flip__count"><span data-flip-i>01</span> / <span data-flip-n>05</span></p>
           </div>
           <p class="sr-only">Computer vision, 3D reconstruction, object detection, efficient edge deep learning and LLM evaluation.</p>
@@ -145,8 +149,21 @@
     <!-- ===== TOOLBOX ===== -->
     <section class="toolbox" id="skills" aria-labelledby="skills-title">
       <div class="shell">
-        <p class="kicker rv">Toolbox</p>
-        <h2 class="h2 rv" id="skills-title">What I work with</h2>
+        <div class="toolbox__top">
+          <div>
+            <p class="kicker rv">Toolbox</p>
+            <h2 class="h2 rv" id="skills-title">What I work with</h2>
+          </div>
+          <div class="rcard-slot rv">
+            <button class="rc-face rc-face--front" id="rc-front" type="button" aria-haspopup="dialog" aria-expanded="false" aria-label="Open the research card">
+              <span class="rc-top"><i class="rc-dot" aria-hidden="true"></i>Research card</span>
+              <span class="rc-title">Research</span>
+              <span class="rc-desc">Computer vision, 3D reconstruction, edge deep learning and LLM evaluation, always tested against a baseline.</span>
+              <span class="rc-hint"><span>Open the card</span><i aria-hidden="true">↗</i></span>
+              <span class="rc-sheen" aria-hidden="true"></span>
+            </button>
+          </div>
+        </div>
         <div class="toolbox__grid" id="skills-grid"></div>
       </div>
     </section>
@@ -186,7 +203,6 @@
             <li><a href="mailto:kgharishpatel@gmail.com">kgharishpatel@gmail.com</a></li>
             <li><a href="https://github.com/harishhh-paaatel" target="_blank" rel="noopener">GitHub ↗</a></li>
             <li><a href="https://www.linkedin.com/in/kg-harish-patel" target="_blank" rel="noopener">LinkedIn ↗</a></li>
-            <li><button class="sf__btn" type="button" data-open-card>Research card</button></li>
           </ul></div>
           <div><h3>Status</h3><ul><li>Open to research internships</li><li>Bengaluru, India</li><li>Local time <time data-clock-copy></time></li></ul></div>
         </div>
@@ -245,18 +261,6 @@
     </div>
   </dialog>
 
-  <!-- ===== RESEARCH CARD DIALOG ===== -->
-  <dialog class="modal" id="card" aria-labelledby="card-title">
-    <div class="modal__panel card3d" id="card3d">
-      <button class="x-btn" type="button" data-close aria-label="Close">×</button>
-      <p class="kicker">Research card</p>
-      <h3 class="modal__t" id="card-title">K G Harish Patel</h3>
-      <p class="modal__p" id="card-sum"></p>
-      <h4>Research interests</h4><ul class="chips" id="card-int"></ul>
-      <p class="modal__p modal__p--sm" id="card-method"></p>
-    </div>
-  </dialog>
-
   <noscript><p style="padding:24px;font:16px sans-serif">K G Harish Patel — Computer Science undergraduate, computer vision and machine learning. Please enable JavaScript to view the full portfolio, or read the <a href="assets/KG_Harish_Patel_Resume.pdf">resume</a>. Email: kgharishpatel@gmail.com</p></noscript>
 
   <script src="assets/js/data.js"></script>
@@ -264,6 +268,7 @@
   <script src="assets/js/main.js" defer></script>
   <script src="assets/js/rooms.js" defer></script>
   <script src="assets/js/rope.js" defer></script>
+  <script src="assets/js/research.js" defer></script>
   <script src="assets/vendor/emailjs.min.js" defer></script>
   <script src="assets/js/emailjs-config.js" defer></script>
   <script src="assets/js/contact.js" defer></script>

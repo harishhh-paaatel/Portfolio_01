@@ -53,10 +53,6 @@
     sl.appendChild(li);
   });
 
-  // research card
-  $('#card-sum').textContent = D.profile.summary;
-  $('#card-method').textContent = D.profile.method;
-  D.profile.interests.forEach(function (i) { $('#card-int').appendChild(el('li', null, i)); });
 
   /* ------------------------------------------------------------ loader / start */
   var started = false;
@@ -229,21 +225,57 @@
   } else rvs.forEach(function (n) { n.classList.add('is-in'); });
   $$('.hero .rv').forEach(function (n, i) { n.style.setProperty('--d', (0.25 + i * 0.1) + 's'); });
 
-  /* ------------------------------------------------------------ hero flip card */
+  /* ------------------------------------------------------------ hero notepad: a real page turn */
   var flip = $('[data-flip]');
   if (flip) {
-    var face = $('[data-flip-face]', flip), fi = $('[data-flip-i]', flip), fn = $('[data-flip-n]', flip);
-    var roles = D.profile.interests, ri = 0;
+    var top = $('[data-top]', flip), under = $('[data-under]', flip), shade = $('.flip__shade', top);
+    var fi = $('[data-flip-i]', flip), fn = $('[data-flip-n]', flip), coils = $('[data-coils]', flip);
+    var roles = D.profile.interests, ri = 0, turning = false;
     fn.textContent = pad(roles.length);
-    function setRole() { face.textContent = roles[ri]; fi.textContent = pad(ri + 1); }
-    setRole();
-    if (!reduced) {
-      setInterval(function () {
-        if (document.hidden) return;
-        face.classList.remove('is-flip'); void face.offsetWidth; face.classList.add('is-flip');
-        setTimeout(function () { ri = (ri + 1) % roles.length; setRole(); }, 380);
-      }, 2800);
+
+    // metal coil binding: one ring per punched hole
+    var SPACING = 26;
+    function buildCoils() {
+      var n = Math.max(6, Math.floor((flip.clientWidth - 40) / SPACING));
+      coils.innerHTML = '';
+      for (var c = 0; c < n; c++) { var i = document.createElement('i'); i.className = 'coil'; i.style.left = (22 + c * ((flip.clientWidth - 44) / (n - 1))) + 'px'; coils.appendChild(i); }
+      flip.style.setProperty('--holes', n);
     }
+    // keep every role on one line: shrink the type until it fits the page
+    function fit(page) {
+      var t = $('.flip__txt', page), max = parseFloat(getComputedStyle(flip).getPropertyValue('--fs')) || 40;
+      t.style.fontSize = max + 'px';
+      var avail = page.clientWidth - 56, size = max;
+      while (t.scrollWidth > avail && size > 18) { size -= 1; t.style.fontSize = size + 'px'; }
+    }
+    function put(page, text) { $('.flip__txt', page).textContent = text; fit(page); }
+    function paint() { put(top, roles[ri]); put(under, roles[(ri + 1) % roles.length]); fi.textContent = pad(ri + 1); }
+    buildCoils(); paint();
+    if (window.ResizeObserver) new ResizeObserver(function () { buildCoils(); paint(); }).observe(flip);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(paint);
+
+    function settle() {
+      ri = (ri + 1) % roles.length;
+      if (window.gsap) window.gsap.set([top, shade, $('.flip__txt', top)], { clearProps: 'all' });
+      paint();
+      turning = false;
+    }
+    function turn() {
+      if (turning || document.hidden) return;
+      turning = true;
+      if (!window.gsap || reduced) { settle(); return; }
+      var g = window.gsap;
+      g.set(top, { transformOrigin: '50% 0%', zIndex: 3 });
+      g.timeline({ onComplete: settle })
+        .to(top, { z: 14, duration: 0.18, ease: 'power1.out' })                                     // the corner is lifted off the pad
+        .to(top, { rotationX: -172, duration: 1.0, ease: 'power2.inOut' }, 0.05)                     // the page swings up over the rings
+        .to(top, { z: 6, duration: 0.5, ease: 'sine.inOut' }, 0.55)
+        .to(shade, { opacity: 0.55, duration: 0.45, ease: 'sine.in' }, 0.05)                         // the page darkens as it rises
+        .to(under, { '--lit': 1, duration: 0.9, ease: 'power1.out' }, 0.1)                           // the page beneath is uncovered
+        .set($('.flip__txt', top), { opacity: 0 }, 0.56)                                              // past the vertical you see the blank back of the sheet
+        .to(top, { opacity: 0, duration: 0.25, ease: 'power1.in' }, 0.95);
+    }
+    if (!reduced) setInterval(turn, 3200);
   }
 
   /* ------------------------------------------------------------ contact + card dialogs */
@@ -256,16 +288,13 @@
   $$('[data-start]').forEach(function (b) {
     b.addEventListener('click', function () { if (menuOpen) setMenu(false); openModal(b); });
   });
-  var card = $('#card'), cardTrigger = null;
-  $$('[data-open-card]').forEach(function (b) { b.addEventListener('click', function () { cardTrigger = b; card.showModal(); lockBody(true); }); });
-  [modal, card].forEach(function (dlg) {
+  [modal].forEach(function (dlg) {
     dlg.addEventListener('click', function (e) {
       if (e.target === dlg || e.target.closest('[data-close]')) dlg.close();
     });
     dlg.addEventListener('close', function () {
       lockBody(false);
-      var t = dlg === modal ? modalTrigger : cardTrigger;
-      if (t) t.focus({ preventScroll: true });
+      if (modalTrigger) modalTrigger.focus({ preventScroll: true });
     });
   });
 
@@ -310,15 +339,6 @@
       }, { passive: true });
       n.addEventListener('pointerleave', function () { n.style.setProperty('--mx', '0px'); n.style.setProperty('--my', '0px'); });
     });
-
-    // research card tilt
-    var c3 = $('#card3d');
-    c3.addEventListener('pointermove', function (e) {
-      var r = c3.getBoundingClientRect();
-      var px = (e.clientX - r.left) / r.width - 0.5, py = (e.clientY - r.top) / r.height - 0.5;
-      c3.style.transform = 'perspective(900px) rotateY(' + (px * 8).toFixed(2) + 'deg) rotateX(' + (-py * 8).toFixed(2) + 'deg)';
-    }, { passive: true });
-    c3.addEventListener('pointerleave', function () { c3.style.transform = ''; });
 
     // cursor
     var cursor = $('.cursor');
